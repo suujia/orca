@@ -1,19 +1,11 @@
 FROM bcgsc/orca-0:latest
 LABEL maintainer="sjackan@gmail.com"
 
-ENV PERL5LIB /home/linuxbrew/perl5/lib/perl5
+# Install Python2 packages
+RUN pip2 install \
+biopython
 
-# Install Perl packages
-RUN cpanm \
-Bio::Perl \
-# for bowtie
-Clone Sys::Info Test::Deep \
-# for mlst
-List::MoreUtils Moo \
-# for prokka
-XML::Simple
-
-# Install Python packages
+# Install Python3 packages
 RUN pip3 install \
 biopython \
 cwlref-runner \

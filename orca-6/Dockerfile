@@ -85,3 +85,7 @@ vt \
 weblogo \
 wiggletools \
 yaha
+
+RUN brew \
+update \
+upgrade

@@ -1,17 +1,5 @@
 FROM bcgsc/orca-4:latest
 
-# Install the dependencies of MAKER.
-RUN cpanm \
-Bit::Vector \
-DBD::SQLite \
-DBI \
-forks \
-forks::shared \
-Inline::C \
-IO::All \
-Perl::Unsafe::Signals \
-Want
-
 RUN brew install \
 macse \
 mafft \
@@ -74,7 +62,6 @@ pixman \
 pkg-config \
 plink \
 poa \
-poretools \
 prodigal \
 prokka \
 proteinortho \

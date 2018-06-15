@@ -1,4 +1,4 @@
-FROM linuxbrew/linuxbrew:1.5.12
+FROM linuxbrew/linuxbrew:1.6.0
 LABEL maintainer="sjackman@gmail.com"
 
 ENV HOMEBREW_NO_AUTO_UPDATE=1
@@ -9,7 +9,9 @@ RUN sudo apt-get update \
 		fonts-dejavu-core \
 	&& sudo rm -rf /var/lib/apt/lists/*
 
-RUN brew tap brewsci/bio \
+RUN brew update \
+&& brew tap brewsci/base \
+&& brew tap brewsci/bio \
 && brew tap brewsci/science \
 && brew install \
 autoconf \
