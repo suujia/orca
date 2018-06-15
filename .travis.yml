@@ -5,7 +5,15 @@ services:
   - docker
 
 before_install:
+<<<<<<< HEAD
   - npm install -g dockerfile_lint
 
 script:
   - find . -name Dockerfile | xargs -i dockerfile_lint -f {} -r dockerfile_rules.yaml
+=======
+  - npm install -g dockerfilelint
+ 
+ script:
+  - find . -name Dockerfile | xargs dockerfilelint
+  - for dockerDir in *; do make $dockerDir; done
+>>>>>>> 4270b24... orca-5: Remove poretools - brewsci/homebrew-bio#266 (#50)
