@@ -64,7 +64,6 @@ gingr \
 glimmerhmm \
 gmap-gsnap \
 grabix \
-graphlan \
 graphviz \
 gsl \
 gzstream
