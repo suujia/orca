@@ -17,23 +17,21 @@ From: linuxbrew/linuxbrew
 
 %post
     # Runs within the container during Bootstrap 
+    mkdir /software
+    cd software
+    echo $PATH
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     export PERL5LIB
 
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
     export PATH
 
-    echo 'PERL5LIB='$PERL5LIB > /environment
-    echo 'PATH='$PATH >> /environment
-
-    # make environmental file executable
-    # chmod +x /etc/environment
-    chown -R linuxbrew /opt/linuxbrew
+    echo 'PERL5LIB='$PERL5LIB > /etc/environment
+    echo 'PATH='$PATH >> /etc/environment
 
     # make environmental file executable
     # chmod +x /etc/environment
 
-    chmod 4755 /usr/local/bin/sudo
     chmod -R 777 /home/linuxbrew/.linuxbrew
     chmod -R 777 /home/linuxbrew/.linuxbrew/Homebrew
 
@@ -42,17 +40,8 @@ From: linuxbrew/linuxbrew
 		fonts-dejavu-core \
 	&& rm -rf /var/lib/apt/lists/*
 
-    # get to linuxbrew user to do brew update
-    chown -R linuxbrew /usr/local/
-
     # brew can't be run as root, use as linuxbrew user
     su -c 'brew update' linuxbrew
-
-    # back to root to do the moving below
-    mv /opt/linuxbrew/bin/brew /usr/local/bin/
-    mv /opt/linuxbrew/Library /usr/local/
-    chown -R linuxbrew /usr/local/
-
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
@@ -90,7 +79,6 @@ From: linuxbrew/linuxbrew
     pip3 install --no-cache-dir --upgrade \
     biopython \
     cwlref-runner \
-    htseq \
     pandas \
     pysam \
     python-igraph \
