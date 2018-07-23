@@ -5,13 +5,9 @@ From: linuxbrew/linuxbrew
     MAINTAINER="sjackman@gmail.com"
 
 %environment
-    # sourced at runtime (for buildtime, include in %post)
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    export PERL5LIB
-
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-    export PATH
-
+    export PATH=/usr/lib/rstudio-server/bin:${PATH}
 %setup
     # Runs from outside the container during Bootstrap
 
@@ -19,64 +15,51 @@ From: linuxbrew/linuxbrew
     # Runs within the container during Bootstrap 
     mkdir /software
     cd software
-    echo $PATH
-    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    export PERL5LIB
-
+    mkdir /scratch
+    
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-    export PATH
-
-    echo 'PERL5LIB='$PERL5LIB > /etc/environment
+    export PERL5LIB PATH SINGULARITY_DISABLE_CACHE=yes
+    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
     echo 'PATH='$PATH >> /etc/environment
 
     # make environmental file executable
     # chmod +x /etc/environment
 
-    chmod -R 777 /home/linuxbrew/.linuxbrew
-    chmod -R 777 /home/linuxbrew/.linuxbrew/Homebrew
+    chown -R $(whoami) /usr/local
+    chown -R linuxbrew: /home/linuxbrew/
+    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+    # mkdir /home/linuxbrew/.cache
+    # chmod -R 777 /home/linuxbrew/.cache
+    # chmod -R 777 /home/linuxbrew/.linuxbrew
+    # chmod -R 777 /home/linuxbrew/.linuxbrew/Homebrew
+
+    mkdir /software
+    cd software
 
     apt-get update \
-	&& apt-get install -y --no-install-recommends \
-		fonts-dejavu-core \
-	&& rm -rf /var/lib/apt/lists/*
-
+        && apt-get install -y --no-install-recommends \
+                fonts-dejavu-core \
+        && rm -rf /var/lib/apt/lists/*
+    
     # brew can't be run as root, use as linuxbrew user
     su -c 'brew update' linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
 
-    su -c 'brew install \
-    autoconf \
-    automake \
-    berkeley-db \
-    cpanm \
-    expat \
-    jdk \
-    less \
-    libxml2 \
-    matplotlib \
-    miller \
-    mysql \
-    numpy \
-    pandoc \
-    perl \
-    python \
-    python@2 \
-    r \
-    ruby \
-    scipy \
-    tcsh \
-    unzip \
-    vim \
-    zip \
-    zlib' linuxbrew
+    su -c 'brew install python' linuxbrew
+    su -c 'brew install python@2' linuxbrew
+    su -c 'brew install zlib' linuxbrew
 
     pip2 install \
     biopython \
-    python-igraph
+    python-igraph \
 
-    pip3 install --no-cache-dir --upgrade \
+    apt-get install python3-numpy
+    apt-get install python3.7-dev libmysqlclient-dev
+
+    pip3 install --no-cache-dir \
+    --upgrade setuptools \
     biopython \
     cwlref-runner \
     pandas \
