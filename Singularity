@@ -67,17 +67,16 @@ From: linuxbrew/linuxbrew
     terminal-table \
     && gem cleanup all' linuxbrew
 
-    pip2 install --upgrade  \
+    pip2 install \
     --upgrade setuptools \
     -U pip \
     biopython
 
-    pip3 install --upgrade \
+    pip3 install \
     --upgrade setuptools \
     --no-cache-dir biopython \
     cwlref-runner \
     pandas \
-    pysam \
     pyvcf \
     virtualenv
 
@@ -94,6 +93,8 @@ From: linuxbrew/linuxbrew
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
+
+    pip3 install pysam
 
     su -c 'brew install \
     a5 \
