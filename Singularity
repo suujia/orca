@@ -4,77 +4,65 @@ From: linuxbrew/linuxbrew
 %labels
     MAINTAINER="sjackman@gmail.com"
 
-%environment
-    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-    export PATH=/usr/lib/rstudio-server/bin:${PATH}
-%setup
-    # Runs from outside the container during Bootstrap
-
 %post
-    # Runs within the container during Bootstrap 
-    mkdir /software
-    cd software
-    mkdir /scratch
-    
-    PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-    export PERL5LIB PATH SINGULARITY_DISABLE_CACHE=yes
-    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
-    echo 'PATH='$PATH >> /etc/environment
-
-    # make environmental file executable
-    # chmod +x /etc/environment
-
-    chown -R $(whoami) /usr/local
+    chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
-    # mkdir /home/linuxbrew/.cache
-    # chmod -R 777 /home/linuxbrew/.cache
-    # chmod -R 777 /home/linuxbrew/.linuxbrew
-    # chmod -R 777 /home/linuxbrew/.linuxbrew/Homebrew
 
-    mkdir /software
-    cd software
+    # need to create mount point for home dir
+    # scratch is larger than /tmp and is always local
+    mkdir /uufs
+    mkdir /scratch
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
                 fonts-dejavu-core \
+                python-setuptools \
         && rm -rf /var/lib/apt/lists/*
-    
+
+    export PERL5LIB PATH SINGULARITY_DISABLE_CACHE=yes
+
+    # for brew install to work
+    PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+    echo 'PATH='$PATH >> /etc/environment
+
+    # install everything at the user's home directory 
+    cd /home/linuxbrew/
+
     # brew can't be run as root, use as linuxbrew user
     su -c 'brew update' linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
 
-    su -c 'brew install python' linuxbrew
-    su -c 'brew install python@2' linuxbrew
+    su -c 'brew install autoconf' linuxbrew
+    su -c 'brew install automake' linuxbrew
+    su -c 'brew install berkeley-db' linuxbrew
+    su -c 'brew install jdk' linuxbrew
+    su -c 'brew install less' linuxbrew
+    su -c 'brew install numpy' linuxbrew
+    su -c 'brew install tcsh' linuxbrew
+    su -c 'brew install unzip' linuxbrew
+    su -c 'brew install zip' linuxbrew
     su -c 'brew install zlib' linuxbrew
+    su -c 'brew install expat' linuxbrew
+    su -c 'brew install pandoc' linuxbrew
+    su -c 'brew install libxml2' linuxbrew
+    su -c 'brew install miller' linuxbrew
 
-    pip2 install \
-    biopython \
-    python-igraph \
+    su -c 'brew install perl' linuxbrew
+    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
+    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
 
-    apt-get install python3-numpy
-    apt-get install python3.7-dev libmysqlclient-dev
+    # python3 installed with numpy, python2 installed with jdk
+    #    python \
+    #    python@2 \
 
-    pip3 install --no-cache-dir \
-    --upgrade setuptools \
-    biopython \
-    cwlref-runner \
-    pandas \
-    pysam \
-    python-igraph \
-    pyvcf \
-    virtualenv
-
-    Rscript -e 'install.packages(repos = c(CRAN = "https://cran.rstudio.com"), c( \
-    "devtools", \
-    "ggplot2", \
-    "knitr", \
-    "rmarkdown", \
-    "tidyverse")); \
-    source("https://bioconductor.org/biocLite.R"); biocLite()
+    su -c 'brew install ruby' linuxbrew
+    # for gem install to work 
+    export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
+    export PATH=/usr/local/opt/ruby20/bin:$PATH
+    su -c 'brew install ruby' linuxbrew
 
     su -c 'gem install \
     gnuplot \
@@ -82,6 +70,30 @@ From: linuxbrew/linuxbrew
     RubyInline \
     terminal-table \
     && gem cleanup all' linuxbrew
+
+    pip2 install --upgrade  \
+    --upgrade setuptools \
+    -U pip \
+    biopython
+
+    pip3 install --upgrade \
+    --upgrade setuptools \
+    --no-cache-dir biopython \
+    cwlref-runner \
+    pandas \
+    pysam \
+    pyvcf \
+    virtualenv
+
+
+    su -c 'brew install r' linuxbrew
+    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+
+    su -c 'brew install matplotlib' linuxbrew
+    su -c 'brew install mysql' linuxbrew
+    su -c 'brew install scipy' linuxbrew
+    su -c 'brew install vim' linuxbrew
+    su -c 'brew install cpanm' linuxbrew
 
     su -c 'brew install \
     a5 \
@@ -104,7 +116,7 @@ From: linuxbrew/linuxbrew
     astral \
     atram \
     augustus \
-    bali-phy \
+    bali-phy
     bam-readcount \
     bam2wig \
     bamhash \
@@ -438,3 +450,10 @@ From: linuxbrew/linuxbrew
     weblogo \
     wiggletools \
     yaha' linuxbrew
+
+%file 
+    # runs automatically when the simg is run 
+    # python /hello_world.py
+
+%test
+    exec R --version
