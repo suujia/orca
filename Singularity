@@ -35,6 +35,10 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
 
+    su -c 'brew install expat' linuxbrew
+    su -c 'brew install libxml2' linuxbrew
+    su -c 'brew install miller' linuxbrew
+
     su -c 'brew install autoconf' linuxbrew
     su -c 'brew install automake' linuxbrew
     su -c 'brew install berkeley-db' linuxbrew
@@ -45,10 +49,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install unzip' linuxbrew
     su -c 'brew install zip' linuxbrew
     su -c 'brew install zlib' linuxbrew
-    su -c 'brew install expat' linuxbrew
-    su -c 'brew install pandoc' linuxbrew
-    su -c 'brew install libxml2' linuxbrew
-    su -c 'brew install miller' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
@@ -85,7 +85,6 @@ From: linuxbrew/linuxbrew
     pyvcf \
     virtualenv
 
-
     su -c 'brew install r' linuxbrew
     Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
@@ -94,6 +93,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew install scipy' linuxbrew
     su -c 'brew install vim' linuxbrew
     su -c 'brew install cpanm' linuxbrew
+    su -c 'brew install pandoc' linuxbrew
 
     su -c 'brew install \
     a5 \
