@@ -50,10 +50,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install zip' linuxbrew
     su -c 'brew install zlib' linuxbrew
 
-    su -c 'brew install perl' linuxbrew
-    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
-
     # python3 installed with numpy, python2 installed with jdk
     #    python \
     #    python@2 \
@@ -94,6 +90,10 @@ From: linuxbrew/linuxbrew
     su -c 'brew install vim' linuxbrew
     su -c 'brew install cpanm' linuxbrew
     su -c 'brew install pandoc' linuxbrew
+
+    su -c 'brew install perl' linuxbrew
+    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
+    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
 
     su -c 'brew install \
     a5 \
