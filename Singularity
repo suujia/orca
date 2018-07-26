@@ -7,12 +7,15 @@ From: linuxbrew/linuxbrew
 %post
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
+    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir
     # scratch is larger than /tmp and is always local
     mkdir /uufs
     mkdir /scratch
+    mkdir /software
+    cd /software
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -74,6 +77,7 @@ From: linuxbrew/linuxbrew
 
     pip3 install \
     --upgrade setuptools \
+    -U pip \
     --no-cache-dir biopython \
     cwlref-runner \
     pandas \
@@ -86,9 +90,9 @@ From: linuxbrew/linuxbrew
     su -c 'brew install matplotlib' linuxbrew
     su -c 'brew install mysql' linuxbrew
     su -c 'brew install scipy' linuxbrew
-    su -c 'brew install vim' linuxbrew
-    su -c 'brew install cpanm' linuxbrew
-    su -c 'brew install pandoc' linuxbrew
+   # su -c 'brew install vim' linuxbrew
+   # su -c 'brew install cpanm' linuxbrew
+   # su -c 'brew install pandoc' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
