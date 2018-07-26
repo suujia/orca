@@ -7,7 +7,6 @@ From: linuxbrew/linuxbrew
 %post
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir
