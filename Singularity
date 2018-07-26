@@ -5,24 +5,30 @@ From: linuxbrew/linuxbrew
     MAINTAINER="sjackman@gmail.com"
 
 %post
+    # symlink for global exec
+    ln -sf /opt/singularity/bin/singularity /usr/bin/singularity
+
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
-    chown linuxbrew: /opt/singularity/libexec/singularity/bin/*
-    chmod 4755 /opt/singularity/libexec/singularity/bin/*-suid
 
     # need to create mount point for home dir
     # scratch is larger than /tmp and is always local
-    mkdir /uufs
-    mkdir /scratch
-    mkdir /software
-    cd /software
+    mkdir -p $SINGULARITY_ROOTFS/uufs
+    mkdir -p /scratch
+    mkdir /Software
+    cd /Software
+
+    chmod 777 /tmp
+	chmod +t /tmp
+    singularity selftest
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
                 fonts-dejavu-core \
                 python-setuptools \
         && rm -rf /var/lib/apt/lists/*
+    apt-get clean
 
     export PERL5LIB PATH SINGULARITY_DISABLE_CACHE=yes
 
@@ -85,8 +91,8 @@ From: linuxbrew/linuxbrew
     pyvcf \
     virtualenv
 
-    su -c 'brew install r' linuxbrew
-    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+  #  su -c 'brew install r' linuxbrew
+  #  Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
     su -c 'brew install matplotlib' linuxbrew
     su -c 'brew install mysql' linuxbrew
