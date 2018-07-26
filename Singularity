@@ -8,6 +8,8 @@ From: linuxbrew/linuxbrew
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+    chown linuxbrew: /opt/singularity/libexec/singularity/bin/*
+    chmod 4755 /opt/singularity/libexec/singularity/bin/*-suid
 
     # need to create mount point for home dir
     # scratch is larger than /tmp and is always local
