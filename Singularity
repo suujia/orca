@@ -19,9 +19,8 @@ From: linuxbrew/linuxbrew
     mkdir /Software
     cd /Software
 
-    chmod 777 /tmp
-	chmod +t /tmp
-    singularity selftest
+    chmod 777 /scratch
+	chmod +t /scratch
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
