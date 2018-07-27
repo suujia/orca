@@ -95,8 +95,8 @@ From: linuxbrew/linuxbrew
   #  Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
     su -c 'brew install matplotlib' linuxbrew
-    su -c 'brew install mysql' linuxbrew
-    su -c 'brew install scipy' linuxbrew
+   # su -c 'brew install mysql' linuxbrew
+   # su -c 'brew install scipy' linuxbrew
    # su -c 'brew install vim' linuxbrew
    # su -c 'brew install cpanm' linuxbrew
    # su -c 'brew install pandoc' linuxbrew
