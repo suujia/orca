@@ -48,7 +48,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install libxml2' linuxbrew
     su -c 'brew install miller' linuxbrew
 
-    su -c 'brew install autoconf' linuxbrew
     su -c 'brew install automake' linuxbrew
     su -c 'brew install berkeley-db' linuxbrew
     su -c 'brew install jdk' linuxbrew
@@ -460,8 +459,9 @@ From: linuxbrew/linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
 
+    su -c 'brew install autoconf' linuxbrew
     pip3 install pysam
-    
+
 %file 
     # runs automatically when the simg is run 
     # python /hello_world.py
