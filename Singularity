@@ -6,7 +6,7 @@ From: linuxbrew/linuxbrew
 
 %post
     # symlink for global exec
-    ln -sf /opt/singularity/bin/singularity /usr/bin/singularity
+    # ln -sf /opt/singularity/bin/singularity /usr/bin/singularity
 
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
