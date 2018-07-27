@@ -17,10 +17,12 @@ From: linuxbrew/linuxbrew
     mkdir -p $SINGULARITY_ROOTFS/uufs
     mkdir -p /scratch
     mkdir /Software
-    cd /Software
 
     chmod 777 /scratch
 	chmod +t /scratch
+    chmod 777 /Software
+	chmod +t /Software
+    cd /Software
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -36,7 +38,7 @@ From: linuxbrew/linuxbrew
     echo 'PATH='$PATH >> /etc/environment
 
     # install everything at the user's home directory 
-    cd /home/linuxbrew/
+    # cd /home/linuxbrew/
 
     # brew can't be run as root, use as linuxbrew user
     su -c 'brew update' linuxbrew
