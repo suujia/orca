@@ -29,7 +29,7 @@ From: linuxbrew/linuxbrew
         && rm -rf /var/lib/apt/lists/*
     apt-get clean
 
-    export PERL5LIB PATH SINGULARITY_DISABLE_CACHE=yes
+    export PATH SINGULARITY_DISABLE_CACHE=yes
 
     # for brew install to work
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
@@ -99,12 +99,6 @@ From: linuxbrew/linuxbrew
    # su -c 'brew install vim' linuxbrew
    # su -c 'brew install cpanm' linuxbrew
    # su -c 'brew install pandoc' linuxbrew
-
-    su -c 'brew install perl' linuxbrew
-    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
-
-    pip3 install pysam
 
     su -c 'brew install \
     a5 \
@@ -462,6 +456,12 @@ From: linuxbrew/linuxbrew
     wiggletools \
     yaha' linuxbrew
 
+    su -c 'brew install perl' linuxbrew
+    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
+    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
+
+    pip3 install pysam
+    
 %file 
     # runs automatically when the simg is run 
     # python /hello_world.py
