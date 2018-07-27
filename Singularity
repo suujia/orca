@@ -101,6 +101,12 @@ From: linuxbrew/linuxbrew
    # su -c 'brew install cpanm' linuxbrew
    # su -c 'brew install pandoc' linuxbrew
 
+    mkdir /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-extra
+    chmod 777 /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-extra
+
+    mkdir /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+    chmod 777 /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
+
     su -c 'brew install \
     a5 \
     abacas \
