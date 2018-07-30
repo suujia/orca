@@ -16,12 +16,6 @@ From: linuxbrew/linuxbrew
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
 
-    # chmod 777 /scratch
-	# chmod +t /scratch
-    # chmod 777 /Software
-	# chmod +t /Software
-    # cd /Software
-
     # install all brew packages in user home dir
     cd /home/linuxbrew 
 
