@@ -102,44 +102,58 @@ From: linuxbrew/linuxbrew
     abyss \
     abyss-explorer \
     ace-corrector \
+
+    su -c 'brew install \
     adam \
     adapterremoval \
     afra \
     amos \
     andi \
     anvio \
+
+    su -c 'brew install \
     aragorn \
     arcs \
     art \
     artemis \
     ascp \
     astral \
+
+    su -c 'brew install \
     augustus \
     bali-phy
     bam2wig \
     bamhash \
     bamm \
     bamtools \
-    bamutil \
+    bamutil' linuxbrew
+
+    su -c 'brew install \
     bandange \
     barrnap \
     bbtools \
     bcalm \
     bcftools \
     beagle \
-    beast \
+    beast' linuxbrew
+
+    su -c 'brew install \
     beast2 \
     bedops \
     bedtools \
     beetl \
     berokka \
-    bfc \
+    bfc' linuxbrew
+
+    su -c 'brew install \
     bioawk \
     biobloomtools \
     biomake \
     bioperl \
     bison \
-    blast \
+    blast' linuxbrew
+
+    su -c 'brew install \
     blast-legacy \
     blat \
     bless \
@@ -147,14 +161,18 @@ From: linuxbrew/linuxbrew
     bowtie \
     bowtie2 \
     breseq \
-    busco \
+    busco' linuxbrew
+
+    su -c 'brew install \
     bwa \
     cannoli \
     canu \
     cap3 \
     cd-hit \
     cegma \
-    celera-assembler \
+    celera-assembler' linuxbrew
+
+    su -c 'brew install \
     centrifuge \
     cerulean \
     circlator \
@@ -170,7 +188,9 @@ From: linuxbrew/linuxbrew
     cutadapt \
     daligner \
     dazz_db \
-    delly \
+    delly' linuxbrew
+
+    su -c 'brew install \
     dextractor \
     diamond \
     dida \
@@ -187,7 +207,9 @@ From: linuxbrew/linuxbrew
     emacs \
     emboss \
     exabayes \
-    exonerate  \
+    exonerate' linuxbrew
+
+    su -c 'brew install \
     fasta \
     fastani \
     fastml \
@@ -210,7 +232,9 @@ From: linuxbrew/linuxbrew
     freebayes \
     freec \
     fsa \
-    fwdpp \
+    fwdpp' linuxbrew
+
+    su -c 'brew install \
     gatb \
     gatk \
     geneid \
@@ -239,7 +263,9 @@ From: linuxbrew/linuxbrew
     idba \
     igv \
     igvtools \
-    impute2 \
+    impute2' linuxbrew
+
+    su -c 'brew install \
     infernal \
     iqtree \
     ispcr \
@@ -258,7 +284,9 @@ From: linuxbrew/linuxbrew
     kmergenie \
     kmerstream \
     kollector \
-    kr \
+    kr' linuxbrew
+
+    su -c 'brew install \
     kraken \
     last \
     lastz \
@@ -281,7 +309,9 @@ From: linuxbrew/linuxbrew
     maker \
     man-db \
     mapsembler2 \
-    maq \
+    maq' linuxbrew
+
+    su -c 'brew install \
     mash \
     mcl \
     megahit \
@@ -301,7 +331,9 @@ From: linuxbrew/linuxbrew
     mothur \
     mp-est \
     mpboost \
-    mrbayes \
+    mrbayes' linuxbrew
+
+    su -c 'brew install \
     multi-worm-tracker \
     mummer \
     muscle \
@@ -330,7 +362,9 @@ From: linuxbrew/linuxbrew
     phipack \
     phlawd \
     phylip \
-    phyml \
+    phyml' linuxbrew
+
+    su -c 'brew install \
     phyutility \
     phyx \
     picard-tools \
@@ -353,7 +387,9 @@ From: linuxbrew/linuxbrew
     quickmerge \
     quicktree \
     quorum \
-    r8s \
+    r8s' linuxbrew
+
+    su -c 'brew install \
     racon \
     rampart \
     rapidnj \
@@ -369,7 +405,9 @@ From: linuxbrew/linuxbrew
     repeatmasker \
     repeatmodeler \
     repeatscout \
-    rmblast \
+    rmblast' linuxbrew
+
+    su -c 'brew install \
     rna-star \
     rnammer \
     ropebwt2 \
@@ -385,7 +423,9 @@ From: linuxbrew/linuxbrew
     seq-gen \
     seqan \
     seqkit \
-    seqtk \
+    seqtk' linuxbrew
+
+    su -c 'brew install \
     sequel \
     sga \
     shovill \
@@ -398,7 +438,9 @@ From: linuxbrew/linuxbrew
     snap \
     snoscan \
     snp-dists \
-    snp-sites \
+    snp-sites' linuxbrew
+    
+    su -c 'brew install \
     snpeff \
     soapdenovo \
     solexaqa \
@@ -416,7 +458,9 @@ From: linuxbrew/linuxbrew
     szip \
     tagdust \
     tasr \
-    tbb \
+    tbb' linuxbrew
+    
+    su -c 'brew install \
     tbl2asn \
     tigmint \
     tophat \
@@ -430,7 +474,9 @@ From: linuxbrew/linuxbrew
     trimmomatic \
     trinity \
     trnascan \
-    unicycler \
+    unicycler' linuxbrew
+
+    su -c 'brew install \
     uniqtag \
     uproc \
     vague \
