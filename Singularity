@@ -7,6 +7,22 @@ From: linuxbrew/linuxbrew
 %runscript
   exec python "$@" 
 
+%apprun slurm
+    echo "#!/bin/bash"
+    echo "#SBATCH --ntasks=1"
+    echo "#SBATCH --time=01:00:00"
+    echo "#SBATCH --mem-per-cpu=4096"
+    echo "#SBATCH --nodes=2"
+    echo "#SBATCH --output=slurm.out"
+    echo "#SBATCH --cpus-per-task=1"
+    echo "#SBATCH --requeue"
+    echo "#SBATCH --gres=lscratch:500"
+
+    echo "module load singularity"
+    echo "singularity run $CONTAINER"
+    echo "# example: run the job script command line:"
+    echo "# sbatch pokemon.job"
+
 %post
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /usr/bin
