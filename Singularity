@@ -8,11 +8,16 @@ From: linuxbrew/linuxbrew
   exec python "$@" 
 
 %post
-    chown -R linuxbrew: /usr/local
-    chown -R linuxbrew: /usr/bin
-    chown -R linuxbrew: /home/linuxbrew/
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+   # chown -R linuxbrew: /usr/local
+   # chown -R linuxbrew: /usr/bin
+   # chown -R linuxbrew: /home/linuxbrew/
+   # chown -R linuxbrew: /home/linuxbrew/.linuxbrew
+   # chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+
+    chmod -R g+w linuxbrew: /usr/local
+    chmod -R g+w linuxbrew: /home/linuxbrew/
+    chmod -R g+w /home/linuxbrew/.linuxbrew
+    chmod -R g+w /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
