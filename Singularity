@@ -8,6 +8,9 @@ From: linuxbrew/linuxbrew
   exec python "$@" 
 
 %post
+    chown root:root /usr/bin/sudo
+    chmod 4755 /usr/bin/sudo
+
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /usr/bin
     chown -R linuxbrew: /home/linuxbrew/
@@ -91,9 +94,6 @@ From: linuxbrew/linuxbrew
     pandas \
     pyvcf \
     virtualenv
-
-  #  su -c 'brew install r' linuxbrew
-  #  Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
     su -c 'brew install matplotlib' linuxbrew
    # su -c 'brew install mysql' linuxbrew
