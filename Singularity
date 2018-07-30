@@ -14,8 +14,8 @@ From: linuxbrew/linuxbrew
    # chown -R linuxbrew: /home/linuxbrew/.linuxbrew
    # chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
-    chmod -R g+w linuxbrew: /usr/local
-    chmod -R g+w linuxbrew: /home/linuxbrew/
+    chmod -R g+w /usr/local
+    chmod -R g+w /home/linuxbrew/
     chmod -R g+w /home/linuxbrew/.linuxbrew
     chmod -R g+w /home/linuxbrew/.linuxbrew/Homebrew
 
