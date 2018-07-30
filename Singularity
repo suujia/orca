@@ -116,7 +116,6 @@ From: linuxbrew/linuxbrew
     astral \
     augustus \
     bali-phy
-    bam2wig \
     bamhash \
     bamm \
     bamtools \
@@ -311,7 +310,6 @@ From: linuxbrew/linuxbrew
     newick-utils \
     newicktools \
     nextflow \ 
-    novoalign \
     ntcard \
     nxtrim \
     oases \
