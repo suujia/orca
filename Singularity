@@ -105,7 +105,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install \
     a5 \
     abacas \
-    abricate \
     abyss \
     abyss-explorer \
     ace-corrector \
