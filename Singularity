@@ -4,25 +4,24 @@ From: linuxbrew/linuxbrew
 %labels
     MAINTAINER="sjackman@gmail.com"
 
-%post
-    # symlink for global exec
-    # ln -sf /opt/singularity/bin/singularity /usr/bin/singularity
+%runscript
+  exec python "$@" 
 
+%post
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
-    # need to create mount point for home dir
-    # scratch is larger than /tmp and is always local
-    mkdir -p $SINGULARITY_ROOTFS/uufs
-    mkdir -p /scratch
-    mkdir /Software
+    # need to create mount point for home dir, scratch
+    mkdir /uufs /scratch
+    cd /root
+    echo $PATH
 
-    chmod 777 /scratch
-	chmod +t /scratch
-    chmod 777 /Software
-	chmod +t /Software
-    cd /Software
+    # chmod 777 /scratch
+	# chmod +t /scratch
+    # chmod 777 /Software
+	# chmod +t /Software
+    # cd /Software
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -100,12 +99,6 @@ From: linuxbrew/linuxbrew
    # su -c 'brew install vim' linuxbrew
    # su -c 'brew install cpanm' linuxbrew
    # su -c 'brew install pandoc' linuxbrew
-
-    mkdir /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-extra
-    chmod 777 /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-extra
-
-    mkdir /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
-    chmod 777 /home/linuxbrew/.linuxbrew/Homebrew/Library/Taps/linuxbrew/homebrew-xorg
 
     su -c 'brew install \
     a5 \
@@ -476,3 +469,6 @@ From: linuxbrew/linuxbrew
 
 %test
     exec R --version
+
+    # Test numpy 
+    /usr/bin/python -c "import numpy as np;np.__config__.show()"
