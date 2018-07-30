@@ -9,6 +9,7 @@ From: linuxbrew/linuxbrew
 
 %post
     chown -R linuxbrew: /usr/local
+    chown -R linuxbrew: /usr/bin
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
