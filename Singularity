@@ -40,6 +40,10 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
+    
+    su -c 'brew install ruby' linuxbrew
+    su -c 'brew install r' linuxbrew
+    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
     su -c 'brew install expat' linuxbrew
     su -c 'brew install libxml2' linuxbrew
@@ -63,7 +67,6 @@ From: linuxbrew/linuxbrew
     # for gem install to work 
     export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
     export PATH=/usr/local/opt/ruby20/bin:$PATH
-    su -c 'brew install ruby' linuxbrew
 
     su -c 'gem install \
     gnuplot \
@@ -85,9 +88,6 @@ From: linuxbrew/linuxbrew
     pandas \
     pyvcf \
     virtualenv
-
-  #  su -c 'brew install r' linuxbrew
-  #  Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
     su -c 'brew install matplotlib' linuxbrew
    # su -c 'brew install mysql' linuxbrew
