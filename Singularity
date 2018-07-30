@@ -10,6 +10,7 @@ From: linuxbrew/linuxbrew
 %post
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
+    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir, scratch
@@ -120,10 +121,8 @@ From: linuxbrew/linuxbrew
     artemis \
     ascp \
     astral \
-    atram \
     augustus \
     bali-phy
-    bam-readcount \
     bam2wig \
     bamhash \
     bamm \
@@ -319,7 +318,6 @@ From: linuxbrew/linuxbrew
     newick-utils \
     newicktools \
     nextflow \ 
-    nonpareil \
     novoalign \
     ntcard \
     nxtrim \
