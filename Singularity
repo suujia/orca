@@ -7,6 +7,12 @@ From: linuxbrew/linuxbrew
 %runscript
   exec python "$@" 
 
+%apprun Rscript
+  exec Rscript "$@"
+
+%runscript
+  exec R "$@" 
+
 %post
     chown root:root /usr/bin/sudo
     chmod 4755 /usr/bin/sudo
@@ -45,7 +51,10 @@ From: linuxbrew/linuxbrew
     
     su -c 'brew install ruby' linuxbrew
     su -c 'brew install r' linuxbrew
-    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+    Rscript -e 'install.packages("ggplot2"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+    Rscript -e 'install.packages("knitr"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+    Rscript -e 'install.packages("rmarkdown"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+    Rscript -e 'install.packages("tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
 
     su -c 'brew install expat' linuxbrew
     su -c 'brew install libxml2' linuxbrew
@@ -124,7 +133,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install \
     augustus \
     bali-phy
-    bam2wig \
     bamhash \
     bamm \
     bamtools \
