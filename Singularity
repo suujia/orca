@@ -8,6 +8,8 @@ From: linuxbrew/linuxbrew
   exec python "$@" 
 
 %post
+    chown root:root /usr/bin/sudo
+    chmod 4755 /usr/bin/sudo
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
