@@ -101,7 +101,7 @@ From: linuxbrew/linuxbrew
     abacas \
     abyss \
     abyss-explorer \
-    ace-corrector \
+    ace-corrector' linuxbrew
 
     su -c 'brew install \
     adam \
@@ -109,7 +109,7 @@ From: linuxbrew/linuxbrew
     afra \
     amos \
     andi \
-    anvio \
+    anvio' linuxbrew
 
     su -c 'brew install \
     aragorn \
@@ -117,7 +117,7 @@ From: linuxbrew/linuxbrew
     art \
     artemis \
     ascp \
-    astral \
+    astral' linuxbrew
 
     su -c 'brew install \
     augustus \
