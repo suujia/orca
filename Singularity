@@ -54,6 +54,7 @@ From: linuxbrew/linuxbrew
     numpy \
     python \
     python@2 \
+    r \
     tcsh \
     unzip \
     zip \
