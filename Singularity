@@ -102,7 +102,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew install cpanm' linuxbrew
     su -c 'brew install pandoc' linuxbrew
 
-        su -c 'brew install \
+    su -c 'brew install \
     a5 \
     abacas \
     abyss \
@@ -126,32 +126,8 @@ From: linuxbrew/linuxbrew
     barrnap \
     bamhash \
     bamm \
-    bamtools
-    beagle \
-    beast' linuxbrew
+    bamtools' linuxbrew
 
-    su -c 'brew install \
-    beast2 \
-    bedops \
-    bedtools \
-    beetl \
-    berokka \
-    bfc \
-    bioawk \
-    biobloomtools \
-    biomake \
-    bioperl \
-    bison \
-
-    su -c 'brew install \    
-    blast' linuxbrew
-    blast-legacy \
-    bless \
-    bonsai \
-    bowtie \
-    bowtie2 \
-    breseq' linuxbrew
-    
     su -c 'brew install \
     busco \
     bwa \
