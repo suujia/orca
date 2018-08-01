@@ -12,15 +12,9 @@ From: linuxbrew/linuxbrew
     chmod 4755 /usr/bin/sudo
 
     chown -R linuxbrew: /usr/local
-    chown -R linuxbrew: /usr/bin
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
-
-    chmod 777 /usr/local
-    chmod 777 /home/linuxbrew/
-    chmod 777 /home/linuxbrew/.linuxbrew
-    chmod 777 /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
@@ -113,7 +107,7 @@ From: linuxbrew/linuxbrew
     # python /hello_world.py
 
 %test
-    exec R --version
+    # exec R --version
 
     # Test numpy 
     /usr/bin/python -c "import numpy as np;np.__config__.show()"
