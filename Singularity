@@ -69,6 +69,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew install berkeley-db' linuxbrew
     su -c 'brew install jdk' linuxbrew
     su -c 'brew install less' linuxbrew
+    su -c 'brew install numpy' linuxbrew
     su -c 'brew install tcsh' linuxbrew
     su -c 'brew install unzip' linuxbrew
     su -c 'brew install zip' linuxbrew
