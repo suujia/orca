@@ -98,9 +98,68 @@ From: linuxbrew/linuxbrew
     su -c 'brew install matplotlib' linuxbrew
    # su -c 'brew install mysql' linuxbrew
    # su -c 'brew install scipy' linuxbrew
-   # su -c 'brew install vim' linuxbrew
-   # su -c 'brew install cpanm' linuxbrew
-   # su -c 'brew install pandoc' linuxbrew
+    su -c 'brew install vim' linuxbrew
+    su -c 'brew install cpanm' linuxbrew
+    su -c 'brew install pandoc' linuxbrew
+
+        su -c 'brew install \
+    a5 \
+    abacas \
+    abyss \
+    abyss-explorer \
+    ace-corrector \
+    adapterremoval \
+    afra \
+    andi \
+    anvio \
+    aragorn \
+    arcs \
+    art \
+    artemis \
+    ascp \
+    astral \
+    augustus' linuxbrew
+
+    su -c 'brew install \
+    bali-phy \
+    bamutil \
+    barrnap \
+    bamhash \
+    bamm \
+    bamtools
+    bbtools \
+    bcalm \
+    bcftools \
+    beagle \
+    beast \
+    beast2 \
+    bedops \
+    bedtools \
+    beetl \
+    berokka \
+    bfc \
+    bioawk \
+    biobloomtools \
+    biomake \
+    bioperl \
+    bison \
+    blast \
+    blast-legacy \
+    bless \
+    bonsai \
+    bowtie \
+    bowtie2 \
+    breseq \
+    busco \
+    bwa \
+    cannoli \
+    canu \
+    cap3 \
+    cd-hit \
+    cegma \
+    celera-assembler \
+    centrifuge \
+    cerulean' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
