@@ -111,10 +111,7 @@ From: linuxbrew/linuxbrew
     # python /hello_world.py
 
 %test
-
-    # Test numpy 
-    exec R --version
-    exec java --version
-    exec gem list
     exec which brew
     exec which libxml2
+    exec java --version
+    exec gem list
