@@ -53,14 +53,13 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
+    su -c 'brew tap brewsci/bio' linuxbrew
     
     su -c 'brew install ruby' linuxbrew
     su -c 'brew install r' linuxbrew
-    # Rscript -e 'install.packages("ggplot2"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
-    # Rscript -e 'install.packages("knitr"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
-    # Rscript -e 'install.packages("rmarkdown"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
-    # Rscript -e 'install.packages("tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
-
+    defaults write org.R-project.R force.LANG en_US.UTF-8
+    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+   
     su -c 'brew install expat' linuxbrew
     su -c 'brew install libxml2' linuxbrew
     su -c 'brew install miller' linuxbrew
@@ -70,6 +69,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew install jdk' linuxbrew
     su -c 'brew install less' linuxbrew
     su -c 'brew install numpy' linuxbrew
+    su -c 'brew install r' linuxbrew
     su -c 'brew install tcsh' linuxbrew
     su -c 'brew install unzip' linuxbrew
     su -c 'brew install zip' linuxbrew
@@ -130,16 +130,21 @@ From: linuxbrew/linuxbrew
     astral \
     augustus' linuxbrew
 
+    su -c 'brew install \
+    bali-phy \
+    bamutil \
+    barrnap \
+    bamhash \
+    bamm \
+    bamtools' linuxbrew
+
+    # sudo: effective uid is not 0
     su -c 'brew install adam' linuxbrew
     su -c 'brew install amos' linuxbrew
-    
-    su -c 'brew install bali-phy' linuxbrew
-    su -c 'brew install bamhash' linuxbrew
-    su -c 'brew install bamm' linuxbrew
-    su -c 'brew install bamtools' linuxbrew
-    su -c 'brew install bamutil' linuxbrew
-    su -c 'brew install bandange' linuxbrew
-    su -c 'brew install barrnap' linuxbrew
+
+    # no available formula 
+    # su -c 'brew install bandange' linuxbrew
+
     su -c 'brew install bbtools' linuxbrew
     su -c 'brew install bcalm' linuxbrew
     su -c 'brew install bcftools' linuxbrew
