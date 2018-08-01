@@ -57,7 +57,6 @@ From: linuxbrew/linuxbrew
     
     su -c 'brew install ruby' linuxbrew
     su -c 'brew install r' linuxbrew
-    defaults write org.R-project.R force.LANG en_US.UTF-8
     Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
    
     su -c 'brew install expat' linuxbrew
@@ -143,7 +142,17 @@ From: linuxbrew/linuxbrew
     su -c 'brew install amos' linuxbrew
 
     # no available formula 
+    # su -c 'brew install bam-readcount' linuxbrew
+    # su -c 'brew install bam2wig' linuxbrew
     # su -c 'brew install bandange' linuxbrew
+    # su -c 'brew install novoalign' linuxbrew
+    # su -c 'brew install pysam' linuxbrew
+
+    # the post-install step did not complete 
+    # su -c 'brew install abricate' linuxbrew
+
+    # conflicting versions of dependencies isl, isl@0.18, gcc@6, gcc
+    # su -c 'brew install atram' linuxbrew
 
     su -c 'brew install bbtools' linuxbrew
     su -c 'brew install bcalm' linuxbrew
