@@ -117,23 +117,23 @@ From: linuxbrew/linuxbrew
     abacas \
     abyss \
     abyss-explorer \
-    ace-corrector' linuxbrew
+    ace-corrector \
+    adapterremoval \
+    afra \
+    andi \
+    anvio \
+    aragorn \
+    arcs \
+    art \
+    artemis \
+    ascp \
+    astral \
+    augustus' linuxbrew
 
     su -c 'brew install adam' linuxbrew
-    su -c 'brew install adapterremoval' linuxbrew
-    su -c 'brew install afra' linuxbrew
     su -c 'brew install amos' linuxbrew
-    su -c 'brew install andi' linuxbrew
-    su -c 'brew install anvio' linuxbrew
-
-    su -c 'brew install aragorn' linuxbrew
-    su -c 'brew install arcs' linuxbrew
-    su -c 'brew install art' linuxbrew
-    su -c 'brew install artemis' linuxbrew
-    su -c 'brew install ascp' linuxbrew
-    su -c 'brew install astral' linuxbrew
-    su -c 'brew install augustus' linuxbrew
-    su -c 'brew install bali-phy
+    
+    su -c 'brew install bali-phy' linuxbrew
     su -c 'brew install bamhash' linuxbrew
     su -c 'brew install bamm' linuxbrew
     su -c 'brew install bamtools' linuxbrew
