@@ -113,7 +113,6 @@ From: linuxbrew/linuxbrew
 %test
 
     # Test numpy 
-    /usr/bin/python -c "import numpy as np;np.__config__.show()"
     exec R --version
     exec java --version
     exec gem list
