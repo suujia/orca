@@ -53,6 +53,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew install jdk' linuxbrew
     su -c 'brew install less' linuxbrew
     su -c 'brew install numpy' linuxbrew
+    su -c 'brew install r' linuxbrew
     su -c 'brew install tcsh' linuxbrew
     su -c 'brew install unzip' linuxbrew
     su -c 'brew install zip' linuxbrew
@@ -107,7 +108,7 @@ From: linuxbrew/linuxbrew
     # python /hello_world.py
 
 %test
-    # exec R --version
+    exec R --version
 
     # Test numpy 
     /usr/bin/python -c "import numpy as np;np.__config__.show()"
