@@ -135,11 +135,30 @@ From: linuxbrew/linuxbrew
     barrnap \
     bamhash \
     bamm \
-    bamtools' linuxbrew
+    bamtools
+    bbtools \
+    bcalm \
+    bcftools \
+    beagle \
+    beast \
+    beast2 \
+    bedops \
+    bedtools \
+    beetl \
+    berokka \
+    bfc \
+    bioawk \
+    biobloomtools \
+    biomake \
+    bioperl \
+    bison \
+    blast \
+    blast-legacy' linuxbrew
 
     # sudo: effective uid is not 0
-    su -c 'brew install adam' linuxbrew
-    su -c 'brew install amos' linuxbrew
+    # su -c 'brew install adam' linuxbrew
+    # su -c 'brew install amos' linuxbrew
+    # su -c 'brew install blat' linuxbrew
 
     # no available formula 
     # su -c 'brew install bam-readcount' linuxbrew
@@ -154,25 +173,6 @@ From: linuxbrew/linuxbrew
     # conflicting versions of dependencies isl, isl@0.18, gcc@6, gcc
     # su -c 'brew install atram' linuxbrew
 
-    su -c 'brew install bbtools' linuxbrew
-    su -c 'brew install bcalm' linuxbrew
-    su -c 'brew install bcftools' linuxbrew
-    su -c 'brew install beagle' linuxbrew
-    su -c 'brew install beast' linuxbrew
-    su -c 'brew install beast2' linuxbrew
-    su -c 'brew install bedops' linuxbrew
-    su -c 'brew install bedtools' linuxbrew
-    su -c 'brew install beetl' linuxbrew
-    su -c 'brew install berokka' linuxbrew
-    su -c 'brew install bfc' linuxbrew
-    su -c 'brew install bioawk' linuxbrew
-    su -c 'brew install biobloomtools' linuxbrew
-    su -c 'brew install biomake' linuxbrew
-    su -c 'brew install bioperl' linuxbrew
-    su -c 'brew install bison' linuxbrew
-    su -c 'brew install blast' linuxbrew
-    su -c 'brew install blast-legacy' linuxbrew
-    su -c 'brew install blat' linuxbrew
     su -c 'brew install bless' linuxbrew
     su -c 'brew install bonsai' linuxbrew
     su -c 'brew install bowtie' linuxbrew
