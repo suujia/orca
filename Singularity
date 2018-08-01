@@ -127,7 +127,6 @@ From: linuxbrew/linuxbrew
     bamhash \
     bamm \
     bamtools
-    bcalm \
     bcftools \
     beagle \
     beast \
