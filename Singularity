@@ -29,8 +29,6 @@ From: linuxbrew/linuxbrew
         && rm -rf /var/lib/apt/lists/*
     apt-get clean
 
-    export PATH SINGULARITY_DISABLE_CACHE=yes
-
     # for brew install to work
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
     echo 'PATH='$PATH >> /etc/environment
@@ -44,31 +42,29 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
 
-    su -c 'brew install expat' linuxbrew
-    su -c 'brew install libxml2' linuxbrew
-    su -c 'brew install miller' linuxbrew
-
-    su -c 'brew install automake' linuxbrew
-    su -c 'brew install berkeley-db' linuxbrew
-    su -c 'brew install jdk' linuxbrew
-    su -c 'brew install less' linuxbrew
-    su -c 'brew install numpy' linuxbrew
-    su -c 'brew install r' linuxbrew
-    su -c 'brew install tcsh' linuxbrew
-    su -c 'brew install unzip' linuxbrew
-    su -c 'brew install zip' linuxbrew
-    su -c 'brew install zlib' linuxbrew
+    su -c 'brew install \
+    autoconf \
+    automake \
+    berkeley-db \
+    expat \
+    jdk \
+    less \
+    libxml2 \
+    miller \
+    numpy \
+    python \
+    python@2 \
+    tcsh \
+    unzip \
+    zip \
+    zlib' linuxbrew
 
     # python3 installed with numpy, python2 installed with jdk
-    #    python \
-    #    python@2 \
 
-    su -c 'brew install ruby' linuxbrew
     # for gem install to work 
     export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
     export PATH=/usr/local/opt/ruby20/bin:$PATH
     su -c 'brew install ruby' linuxbrew
-
     su -c 'gem install \
     gnuplot \
     narray \
@@ -100,8 +96,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
-
-    su -c 'brew install autoconf' linuxbrew
 
 %file 
     # runs automatically when the simg is run 
