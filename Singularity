@@ -470,8 +470,7 @@ From: linuxbrew/linuxbrew
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
 
     su -c 'brew install autoconf' linuxbrew
-    pip3 install pysam
-
+    
 %file 
     # runs automatically when the simg is run 
     # python /hello_world.py
