@@ -109,9 +109,3 @@ From: linuxbrew/linuxbrew
 %file 
     # runs automatically when the simg is run 
     # python /hello_world.py
-
-%test
-    exec which brew
-    exec which libxml2
-    exec java --version
-    exec gem list
