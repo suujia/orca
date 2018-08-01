@@ -127,9 +127,10 @@ From: linuxbrew/linuxbrew
     bamhash \
     bamm \
     bamtools
-    bcftools \
     beagle \
-    beast \
+    beast' linuxbrew
+
+    su -c 'brew install \
     beast2 \
     bedops \
     bedtools \
@@ -141,13 +142,17 @@ From: linuxbrew/linuxbrew
     biomake \
     bioperl \
     bison \
-    blast \
+
+    su -c 'brew install \    
+    blast' linuxbrew
     blast-legacy \
     bless \
     bonsai \
     bowtie \
     bowtie2 \
-    breseq \
+    breseq' linuxbrew
+    
+    su -c 'brew install \
     busco \
     bwa \
     cannoli \
