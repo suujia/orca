@@ -153,7 +153,22 @@ From: linuxbrew/linuxbrew
     bioperl \
     bison \
     blast \
-    blast-legacy' linuxbrew
+    blast-legacy \
+    bless \
+    bonsai \
+    bowtie \
+    bowtie2 \
+    breseq \
+    busco \
+    bwa \
+    cannoli \
+    canu \
+    cap3 \
+    cd-hit \
+    cegma \
+    celera-assembler \
+    centrifuge \
+    cerulean' linuxbrew
 
     # sudo: effective uid is not 0
     # su -c 'brew install adam' linuxbrew
@@ -166,6 +181,7 @@ From: linuxbrew/linuxbrew
     # su -c 'brew install bandange' linuxbrew
     # su -c 'brew install novoalign' linuxbrew
     # su -c 'brew install pysam' linuxbrew
+    # su -c 'brew install paml' linuxbrew
 
     # the post-install step did not complete 
     # su -c 'brew install abricate' linuxbrew
@@ -173,21 +189,6 @@ From: linuxbrew/linuxbrew
     # conflicting versions of dependencies isl, isl@0.18, gcc@6, gcc
     # su -c 'brew install atram' linuxbrew
 
-    su -c 'brew install bless' linuxbrew
-    su -c 'brew install bonsai' linuxbrew
-    su -c 'brew install bowtie' linuxbrew
-    su -c 'brew install bowtie2' linuxbrew
-    su -c 'brew install breseq' linuxbrew
-    su -c 'brew install busco' linuxbrew
-    su -c 'brew install bwa' linuxbrew
-    su -c 'brew install cannoli' linuxbrew
-    su -c 'brew install canu' linuxbrew
-    su -c 'brew install cap3' linuxbrew
-    su -c 'brew install cd-hit' linuxbrew
-    su -c 'brew install cegma' linuxbrew
-    su -c 'brew install celera-assembler' linuxbrew
-    su -c 'brew install centrifuge' linuxbrew
-    su -c 'brew install cerulean' linuxbrew
     su -c 'brew install circlator' linuxbrew
     su -c 'brew install circos' linuxbrew
     su -c 'brew install clark' linuxbrew
@@ -349,7 +350,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install oma' linuxbrew
     su -c 'brew install orfm' linuxbrew
     su -c 'brew install orthofinder' linuxbrew
-    su -c 'brew install paml' linuxbrew
     su -c 'brew install pandaseq' linuxbrew
     su -c 'brew install panito' linuxbrew
     su -c 'brew install parallel' linuxbrew
