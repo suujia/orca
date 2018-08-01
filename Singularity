@@ -7,6 +7,9 @@ From: linuxbrew/linuxbrew
 %runscript
   exec python "$@" 
 
+%runscript
+  exec R "$@" 
+
 %post
     chown root:root /usr/bin/sudo
     chmod 4755 /usr/bin/sudo
@@ -32,6 +35,11 @@ From: linuxbrew/linuxbrew
     # for brew install to work
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
     echo 'PATH='$PATH >> /etc/environment
+
+    echo "
+      export PATH=/usr/local/bin:$PATH
+      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+    " >> /etc/environment
 
     # install everything at the user's home directory 
     # cd /home/linuxbrew/
@@ -103,7 +111,11 @@ From: linuxbrew/linuxbrew
     # python /hello_world.py
 
 %test
-    exec R --version
 
     # Test numpy 
     /usr/bin/python -c "import numpy as np;np.__config__.show()"
+    exec R --version
+    exec java --version
+    exec gem list
+    exec which brew
+    exec which libxml2
