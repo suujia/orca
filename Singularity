@@ -123,10 +123,40 @@ From: linuxbrew/linuxbrew
     su -c 'brew install \
     bali-phy \
     bamutil \
+    bandage \
     barrnap \
     bamhash \
     bamm \
     bamtools' linuxbrew
+
+    su -c 'brew install \
+    bamutil \
+    bandage \
+    barrnap \
+    bbtools \
+    bcalm \
+    bcftools \
+    beagle \
+    beast \
+    beast2 \
+    bedops \
+    bedtools \
+    beetl \
+    berokka \
+    bfc \
+    bioawk \
+    biobloomtools \
+    biomake \
+    bioperl \
+    bison \
+    blast \
+    blast-legacy \
+    blat \
+    bless \
+    bonsai \
+    bowtie \
+    bowtie2 \
+    breseq' linuxbrew
 
     su -c 'brew install \
     busco \
