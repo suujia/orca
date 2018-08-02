@@ -11,13 +11,9 @@ From: linuxbrew/linuxbrew
   exec R "$@" 
 
 %post
-    # chown root:root /usr/bin/sudo
-    # chmod 4755 /usr/bin/sudo
-
-    # chown -R linuxbrew: /usr/local
-    # chown -R linuxbrew: /home/linuxbrew/
-    # chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    # chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+    chown -R linuxbrew: /usr/local
+    chown -R linuxbrew: /Library/Caches/Homebrew
+    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
     chmod 4777 /usr/local
     chmod 4777 /home/linuxbrew/
