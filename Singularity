@@ -124,7 +124,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install \
     bali-phy \
     bamutil \
-    bandage \
     barrnap \
     bamhash \
     bamm \
