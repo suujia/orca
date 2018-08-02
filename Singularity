@@ -11,13 +11,18 @@ From: linuxbrew/linuxbrew
   exec R "$@" 
 
 %post
-    chown root:root /usr/bin/sudo
-    chmod 4755 /usr/bin/sudo
+    # chown root:root /usr/bin/sudo
+    # chmod 4755 /usr/bin/sudo
 
-    chown -R linuxbrew: /usr/local
-    chown -R linuxbrew: /home/linuxbrew/
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+    # chown -R linuxbrew: /usr/local
+    # chown -R linuxbrew: /home/linuxbrew/
+    # chown -R linuxbrew: /home/linuxbrew/.linuxbrew
+    # chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+
+    chmod 4777 linuxbrew: /usr/local
+    chmod 4777 linuxbrew: /home/linuxbrew/
+    chmod 4777 linuxbrew: /home/linuxbrew/.linuxbrew
+    chmod 4777 linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
@@ -130,9 +135,6 @@ From: linuxbrew/linuxbrew
     bamtools' linuxbrew
 
     su -c 'brew install \
-    bamutil \
-    bandage \
-    barrnap \
     bbtools \
     bcalm \
     bcftools \
