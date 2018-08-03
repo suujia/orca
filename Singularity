@@ -14,7 +14,7 @@ From: linuxbrew/linuxbrew
     chown -R root:root /usr/bin/sudo
     chown -R linuxbrew: /home/linuxbrew/
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    chmod 777 /home/linuxbrew/
+    chmod 777 linuxbrew: /home/linuxbrew/
     chmod 777 /home/linuxbrew/.linuxbrew
 
     # need to create mount point for home dir, scratch
@@ -125,32 +125,6 @@ From: linuxbrew/linuxbrew
     bamhash \
     bamm \
     bamtools' linuxbrew
-
-    su -c 'brew install \
-    bbtools \
-    bcalm \
-    bcftools \
-    beagle \
-    beast \
-    beast2 \
-    bedops \
-    bedtools \
-    beetl \
-    berokka \
-    bfc \
-    bioawk \
-    biobloomtools \
-    biomake \
-    bioperl \
-    bison \
-    blast \
-    blast-legacy \
-    blat \
-    bless \
-    bonsai \
-    bowtie \
-    bowtie2 \
-    breseq' linuxbrew
 
     su -c 'brew install \
     busco \
