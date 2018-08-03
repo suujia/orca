@@ -11,7 +11,9 @@ From: linuxbrew/linuxbrew
   exec R "$@" 
 
 %post
+    chown -R root:root /usr/bin/sudo
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
+
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
 
