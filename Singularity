@@ -11,15 +11,7 @@ From: linuxbrew/linuxbrew
   exec R "$@" 
 
 %post
-    chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
-
-    chmod -R 4777  /usr/local
-    chmod -R 4777  /home/linuxbrew/
-    chmod -R 4777 /home/linuxbrew/.linuxbrew
-    chmod -R 4777 /home/linuxbrew/.linuxbrew/Homebrew
-
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
 
