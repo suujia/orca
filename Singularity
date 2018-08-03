@@ -15,10 +15,10 @@ From: linuxbrew/linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
-    chmod 4777 /usr/local
-    chmod 4777 /home/linuxbrew/
-    chmod 4777 /home/linuxbrew/.linuxbrew
-    chmod 4777 /home/linuxbrew/.linuxbrew/Homebrew
+    chmod -R g+w  /usr/local
+    chmod -R g+w  /home/linuxbrew/
+    chmod -R g+w /home/linuxbrew/.linuxbrew
+    chmod -R g+w /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
