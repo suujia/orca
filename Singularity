@@ -126,24 +126,7 @@ From: linuxbrew/linuxbrew
     ascp \
     astral \
     augustus' linuxbrew
-
-    su -c 'brew install \
-    bali-phy \
-    bamutil \
-    barrnap \
-    bamhash \
-    bamm \
-    bamtools
-    bwa \
-    cannoli \
-    canu \
-    cap3 \
-    cd-hit \
-    cegma \
-    celera-assembler \
-    centrifuge \
-    cerulean' linuxbrew
-
+    
     # sudo: effective uid is not 0
     # su -c 'brew install adam' linuxbrew
     # su -c 'brew install amos' linuxbrew
