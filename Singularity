@@ -300,7 +300,6 @@ From: linuxbrew/linuxbrew
     newick-utils \
     newicktools \
     nextflow \ 
-    nonpareil \
     novoalign \
     ntcard \
     nxtrim \
