@@ -32,7 +32,6 @@ From: linuxbrew/linuxbrew
     # for brew install to work
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
     echo 'PATH='$PATH >> /etc/environment
-
     echo "
       export PATH=/usr/local/bin:$PATH
       export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
