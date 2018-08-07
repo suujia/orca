@@ -283,7 +283,6 @@ From: linuxbrew/linuxbrew
     mosdepth \
     mothur \
     mp-est \
-    mpboost \
     mrbayes \
     multi-worm-tracker \
     mummer \
@@ -294,7 +293,6 @@ From: linuxbrew/linuxbrew
     newick-utils \
     newicktools \
     nextflow \ 
-    nonpareil \
     novoalign \
     ntcard \
     nxtrim \
