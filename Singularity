@@ -60,7 +60,6 @@ From: linuxbrew/linuxbrew
     automake \
     berkeley-db \
     expat \
-    jdk \
     less \
     libxml2 \
     miller \
@@ -86,20 +85,6 @@ From: linuxbrew/linuxbrew
     terminal-table \
     && gem cleanup all' linuxbrew
 
-    pip2 install \
-    --upgrade setuptools \
-    -U pip \
-    biopython
-
-    pip3 install \
-    --upgrade setuptools \
-    -U pip \
-    --no-cache-dir biopython \
-    cwlref-runner \
-    pandas \
-    pyvcf \
-    virtualenv
-
     su -c 'brew install \
     macse \
     mafft \
@@ -113,7 +98,6 @@ From: linuxbrew/linuxbrew
     mcl \
     megahit \
     meme \
-    metaphlan \
     methpipe \
     mhap \
     minced \
@@ -122,7 +106,6 @@ From: linuxbrew/linuxbrew
     minimap \
     minimap2 \
     mir-prefer \
-    mitofy \
     mlst \
     mosdepth \
     mothur \
@@ -170,7 +153,6 @@ From: linuxbrew/linuxbrew
     portcullis \
     prank \
     prodigal \
-    prokka \
     proteinortho \
     psmc \
     quast \
@@ -191,7 +173,6 @@ From: linuxbrew/linuxbrew
     readsim \
     realphy \
     recon \
-    repeatmasker \
     repeatmodeler \
     repeatscout \
     rmblast \
