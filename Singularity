@@ -56,9 +56,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
     
     su -c 'brew install ruby' linuxbrew
-    su -c 'brew install r' linuxbrew
-    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
-   
+
     su -c 'brew install expat' linuxbrew
     su -c 'brew install libxml2' linuxbrew
     su -c 'brew install miller' linuxbrew
@@ -136,7 +134,6 @@ From: linuxbrew/linuxbrew
     bamhash \
     bamm \
     bamtools
-    bbtools \
     bcalm \
     bcftools \
     beagle \
@@ -478,7 +475,10 @@ From: linuxbrew/linuxbrew
     su -c 'brew install weblogo' linuxbrew
     su -c 'brew install wiggletools' linuxbrew
     su -c 'brew install yaha' linuxbrew
-
+    
+    su -c 'brew install r' linuxbrew
+    Rscript -e 'install.packages(c("ggplot2", "knitr", "rmarkdown", "tidyverse"), repos = "http://cran.rstudio.com"); source("https://bioconductor.org/biocLite.R"); biocLite()'
+   
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
