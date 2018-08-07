@@ -123,7 +123,9 @@ From: linuxbrew/linuxbrew
     artemis \
     ascp \
     astral \
-    augustus
+    augustus' linuxbrew
+
+    su -c 'brew install \
     bali-phy \
     bamutil \
     barrnap \
@@ -131,7 +133,9 @@ From: linuxbrew/linuxbrew
     bamm \
     bamtools
     busco \
-    bwa \
+    bwa' linuxbrew
+
+    su -c 'brew install \
     cannoli \
     canu \
     cap3 \
