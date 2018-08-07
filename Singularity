@@ -11,7 +11,6 @@ From: linuxbrew/linuxbrew
   exec R "$@" 
 
 %post
-    chmod 755 /root
     chown -R root:root /usr/bin/sudo
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
