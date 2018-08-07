@@ -72,6 +72,27 @@ From: linuxbrew/linuxbrew
     zip \
     zlib' linuxbrew
 
+    pip2 install \
+    --upgrade setuptools \
+    -U pip \
+    biopython
+
+    pip3 install \
+    --upgrade setuptools \
+    -U pip \
+    --no-cache-dir biopython \
+    cwlref-runner \
+    pandas \
+    pyvcf \
+    virtualenv
+
+    su -c 'brew install matplotlib' linuxbrew
+    su -c 'brew install mysql' linuxbrew
+    su -c 'brew install scipy' linuxbrew
+    su -c 'brew install vim' linuxbrew
+    su -c 'brew install cpanm' linuxbrew
+    su -c 'brew install pandoc' linuxbrew
+
     # for gem install to work 
     export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
     export PATH=/usr/local/opt/ruby20/bin:$PATH
@@ -82,6 +103,161 @@ From: linuxbrew/linuxbrew
     RubyInline \
     terminal-table \
     && gem cleanup all' linuxbrew
+
+    su -c 'brew install \
+    a5 \
+    abacas \
+    abyss \
+    abyss-explorer \
+    ace-corrector \
+    adapterremoval \
+    afra \
+    andi \
+    anvio \
+    aragorn \
+    arcs \
+    art \
+    artemis \
+    ascp \
+    astral \
+    augustus' linuxbrew
+
+    su -c 'brew install \
+    bali-phy \
+    bamutil \
+    barrnap \
+    bamhash \
+    bamm \
+    bamtools \
+    busco \
+    bwa' linuxbrew
+
+    su -c 'brew install \
+    cannoli \
+    canu \
+    cap3 \
+    cd-hit \
+    cegma \
+    celera-assembler \
+    centrifuge \
+    cerulean' linuxbrew
+    
+    su -c 'brew install \
+    circlator \
+    circos \
+    clark \
+    clonalframeml \
+    clonehd \
+    clustal-omega \
+    clustal-w \
+    cmake \
+    consel \
+    curl \
+    cutadapt \
+    daligner \
+    dazz_db \
+    delly \
+    dextractor \
+    diamond \
+    dida \
+    discovar \
+    disty \
+    dsh-bio \
+    dsk \
+    dwgsim \
+    e-mem \
+    easel \
+    edirect \
+    elph \
+    ema \
+    emacs \
+    emboss \
+    exabayes \
+    exonerate  \
+    fasta \
+    fastani \
+    fastml \
+    fastp \
+    fastq-tools \
+    fastqc \
+    fasttree \
+    fastuniq \
+    fastx_toolkit \
+    fermi \
+    fermi-lite \
+    fermi2 \
+    fermikit \
+    figtree \
+    finch-rs \
+    flash \
+    flex \
+    flye \
+    fqzcomp \
+    freebayes \
+    freec \
+    fsa \
+    fwdpp \
+    gatb \
+    gatk \
+    geneid \
+    genewise \
+    genome-painter \
+    genometools \
+    gepard \
+    gfalint \
+    gfakluge \
+    gingr \
+    glimmerhmm \
+    gmap-gsnap \
+    grabix \
+    graphviz \
+    gsl \
+    gzstream \
+    harfbuzz \
+    hisat \
+    hisat2 \
+    hlaminer \
+    hmmer \
+    hmmer2 \
+    htsbox \
+    htslib \
+    humann2 \
+    idba \
+    igv \
+    igvtools \
+    impute2 \
+    infernal \
+    iqtree \
+    ispcr \
+    iva \
+    jellyfish \
+    jspecies \
+    k8 \
+    kaiju \
+    kallisto \
+    kat \
+    kent-tools \
+    kma \
+    kmacs \
+    kmc \
+    kmergenie \
+    kmerstream \
+    kollector \
+    kr \
+    kraken \
+    last \
+    lastz \
+    libbigwig \
+    libpll \
+    libsequence \
+    libtool \
+    light-assembler \
+    lighter \
+    links-scaffolder \
+    lofreq \
+    lrsim \
+    lsd \
+    lumpy-sv' linuxbrew
 
     su -c 'brew install \
     macse \
