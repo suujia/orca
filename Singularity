@@ -134,29 +134,6 @@ From: linuxbrew/linuxbrew
     bamhash \
     bamm \
     bamtools
-    bcalm \
-    bcftools \
-    beagle \
-    beast \
-    beast2 \
-    bedops \
-    bedtools \
-    beetl \
-    berokka \
-    bfc \
-    bioawk \
-    biobloomtools \
-    biomake \
-    bioperl \
-    bison \
-    blast \
-    blast-legacy \
-    bless \
-    bonsai \
-    bowtie \
-    bowtie2 \
-    breseq \
-    busco \
     bwa \
     cannoli \
     canu \
