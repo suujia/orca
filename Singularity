@@ -96,7 +96,6 @@ From: linuxbrew/linuxbrew
     -U pip \
     --no-cache-dir biopython \
     cwlref-runner \
-    htseq \
     pandas \
     pyvcf \
     virtualenv
