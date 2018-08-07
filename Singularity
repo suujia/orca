@@ -48,12 +48,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     export PATH
 
     # brew can't be run as root, use as linuxbrew user
-    su -c 'brew update' linuxbrew
-    su -c 'brew tap brewsci/base' linuxbrew
-    su -c 'brew tap brewsci/science' linuxbrew
-    su -c 'brew tap brewsci/bio' linuxbrew
+    su -c 'brew update' singularity
+    su -c 'brew tap brewsci/base' singularity
+    su -c 'brew tap brewsci/science' singularity
+    su -c 'brew tap brewsci/bio' singularity
 
-    su -c 'brew install bcalm' linuxbrew
+    su -c 'brew install bcalm' singularity
 
     su -c 'brew install \
     autoconf \
@@ -71,20 +71,20 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     tcsh \
     unzip \
     zip \
-    zlib' linuxbrew
+    zlib' singularity
 
     # python3 installed with numpy, python2 installed with jdk
 
     # for gem install to work 
     export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
     export PATH=/usr/local/opt/ruby20/bin:$PATH
-    su -c 'brew install ruby' linuxbrew
+    su -c 'brew install ruby' singularity
     su -c 'gem install \
     gnuplot \
     narray \
     RubyInline \
     terminal-table \
-    && gem cleanup all' linuxbrew
+    && gem cleanup all' singularity
 
     pip2 install \
     --upgrade setuptools \
@@ -100,12 +100,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     pyvcf \
     virtualenv
 
-    su -c 'brew install matplotlib' linuxbrew
-   # su -c 'brew install mysql' linuxbrew
-    su -c 'brew install scipy' linuxbrew
-    su -c 'brew install vim' linuxbrew
-    su -c 'brew install cpanm' linuxbrew
-    su -c 'brew install pandoc' linuxbrew
+    su -c 'brew install matplotlib' singularity
+   # su -c 'brew install mysql' singularity
+    su -c 'brew install scipy' singularity
+    su -c 'brew install vim' singularity
+    su -c 'brew install cpanm' singularity
+    su -c 'brew install pandoc' singularity
 
     su -c 'brew install \
     a5 \
@@ -123,7 +123,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     artemis \
     ascp \
     astral \
-    augustus' linuxbrew
+    augustus' singularity
 
     su -c 'brew install \
     bali-phy \
@@ -133,7 +133,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     bamm \
     bamtools \
     busco \
-    bwa' linuxbrew
+    bwa' singularity
 
     su -c 'brew install \
     cannoli \
@@ -143,7 +143,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     cegma \
     celera-assembler \
     centrifuge \
-    cerulean' linuxbrew
+    cerulean' singularity
     
     su -c 'brew install \
     circlator \
@@ -261,7 +261,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     lofreq \
     lrsim \
     lsd \
-    lumpy-sv' linuxbrew
+    lumpy-sv' singularity
     
     su -c 'brew install \
     macse \
@@ -437,9 +437,9 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     vt \
     weblogo \
     wiggletools \
-    yaha' linuxbrew
+    yaha' singularity
 
-    su -c 'brew install perl' linuxbrew
+    su -c 'brew install perl' singularity
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
 
