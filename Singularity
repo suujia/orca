@@ -11,6 +11,7 @@ From: linuxbrew/linuxbrew
   exec R "$@" 
 
 %post
+    chmod 755 /root
     chown -R root:root /usr/bin/sudo
     chown -R linuxbrew: /usr/local
     chown -R linuxbrew: /home/linuxbrew/
@@ -52,6 +53,8 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
+
+    su -c 'brew install bcalm' linuxbrew
 
     su -c 'brew install \
     autoconf \
@@ -100,7 +103,7 @@ From: linuxbrew/linuxbrew
 
     su -c 'brew install matplotlib' linuxbrew
    # su -c 'brew install mysql' linuxbrew
-   # su -c 'brew install scipy' linuxbrew
+    su -c 'brew install scipy' linuxbrew
     su -c 'brew install vim' linuxbrew
     su -c 'brew install cpanm' linuxbrew
     su -c 'brew install pandoc' linuxbrew
@@ -121,17 +124,13 @@ From: linuxbrew/linuxbrew
     artemis \
     ascp \
     astral \
-    augustus' linuxbrew
-
-    su -c 'brew install \
+    augustus
     bali-phy \
     bamutil \
     barrnap \
     bamhash \
     bamm \
-    bamtools' linuxbrew
-
-    su -c 'brew install \
+    bamtools
     busco \
     bwa \
     cannoli \
