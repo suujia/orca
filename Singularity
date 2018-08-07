@@ -72,8 +72,6 @@ From: linuxbrew/linuxbrew
     zip \
     zlib' linuxbrew
 
-    # python3 installed with numpy, python2 installed with jdk
-
     # for gem install to work 
     export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
     export PATH=/usr/local/opt/ruby20/bin:$PATH
