@@ -1,32 +1,26 @@
-Bootstrap: docker
-From: linuxbrew/linuxbrew
+BootStrap: debootstrap
+OSVersion: trusty
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %labels
     MAINTAINER="sjackman@gmail.com"
 
-%runscript
-  exec python "$@" 
+%apprun R
+  exec R "$@"
+
+%apprun Rscript
+  exec Rscript "$@"
 
 %runscript
-  exec R "$@" 
+  exec R "$@"
 
 %post
-    chown -R root:root /usr/bin/sudo
-    chown -R linuxbrew: /usr/local
-    chown -R linuxbrew: /home/linuxbrew/
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+    mkdir -p /Software 
+    cd /Software
+    chmod 777 /Software
 
-    chmod 755 /usr/local
-    chmod 755 /home/linuxbrew/
-    chmod 755 /home/linuxbrew/.linuxbrew
-    chmod 755 /home/linuxbrew/.linuxbrew/Homebrew
-
-    # need to create mount point for home dir, scratch
-    mkdir /uufs /scratch
-
-    # install all brew packages in user home dir
-    cd /home/linuxbrew 
+    # need to create mount point for home dir
+    mkdir /uufs
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -35,17 +29,23 @@ From: linuxbrew/linuxbrew
         && rm -rf /var/lib/apt/lists/*
     apt-get clean
 
+    # set up linuxbrew 
+    locale-gen "en_US.UTF-8"
+    dpkg-reconfigure locales
+    export LANGUAGE="en_US.UTF-8"
+    echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
+    echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
+    cd /Software
+    chmod 777 /scratch
+    chmod +t /scratch
+    apt-get install -y apt-transport-https build-essential libsm6 libxrender1 libfontconfig1 ruby
+    useradd -m singularity
+    su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git /Software/brew' singularity
+    su -c 'brew install gawk' singularity
+
     # for brew install to work
-    PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-    echo 'PATH='$PATH >> /etc/environment
-
-    echo "
-      export PATH=/usr/local/bin:$PATH
-      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-    " >> /etc/environment
-
-    # install everything at the user's home directory 
-    # cd /home/linuxbrew/
+    PATH=/Software/brew/bin:/Software/brew/sbin:$PATH
+    export PATH
 
     # brew can't be run as root, use as linuxbrew user
     su -c 'brew update' linuxbrew
