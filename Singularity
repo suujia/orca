@@ -131,7 +131,7 @@ From: linuxbrew/linuxbrew
     barrnap \
     bamhash \
     bamm \
-    bamtools
+    bamtools \
     busco \
     bwa' linuxbrew
 
