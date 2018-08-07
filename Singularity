@@ -159,7 +159,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install cutadapt' linuxbrew
     su -c 'brew install daligner' linuxbrew
     su -c 'brew install dazz_db' linuxbrew
-    su -c 'brew install delly' linuxbrew
     su -c 'brew install dextractor' linuxbrew
     su -c 'brew install diamond' linuxbrew
     su -c 'brew install dida' linuxbrew
@@ -190,7 +189,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install fermi-lite' linuxbrew
     su -c 'brew install fermi2' linuxbrew
     su -c 'brew install fermikit' linuxbrew
-    su -c 'brew install figtree' linuxbrew
     su -c 'brew install finch-rs' linuxbrew
     su -c 'brew install flash' linuxbrew
     su -c 'brew install flex' linuxbrew
@@ -201,12 +199,10 @@ From: linuxbrew/linuxbrew
     su -c 'brew install fsa' linuxbrew
     su -c 'brew install fwdpp' linuxbrew
     su -c 'brew install gatb' linuxbrew
-    su -c 'brew install gatk' linuxbrew
     su -c 'brew install geneid' linuxbrew
     su -c 'brew install genewise' linuxbrew
     su -c 'brew install genome-painter' linuxbrew
     su -c 'brew install genometools' linuxbrew
-    su -c 'brew install gepard' linuxbrew
     su -c 'brew install gfalint' linuxbrew
     su -c 'brew install gfakluge' linuxbrew
     su -c 'brew install gingr' linuxbrew
@@ -224,9 +220,7 @@ From: linuxbrew/linuxbrew
     su -c 'brew install hmmer2' linuxbrew
     su -c 'brew install htsbox' linuxbrew
     su -c 'brew install htslib' linuxbrew
-    su -c 'brew install humann2' linuxbrew
     su -c 'brew install idba' linuxbrew
-    su -c 'brew install igv' linuxbrew
     su -c 'brew install igvtools' linuxbrew
     su -c 'brew install impute2' linuxbrew
     su -c 'brew install infernal' linuxbrew
@@ -235,7 +229,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install iva' linuxbrew
     su -c 'brew install jellyfish' linuxbrew
     su -c 'brew install jpeg' linuxbrew
-    su -c 'brew install jspecies' linuxbrew
     su -c 'brew install k8' linuxbrew
     su -c 'brew install kaiju' linuxbrew
     su -c 'brew install kallisto' linuxbrew
@@ -261,7 +254,6 @@ From: linuxbrew/linuxbrew
     su -c 'brew install lofreq' linuxbrew
     su -c 'brew install lrsim' linuxbrew
     su -c 'brew install lsd' linuxbrew
-    su -c 'brew install lua' linuxbrew
     su -c 'brew install lumpy-sv' linuxbrew
     su -c 'brew install macse' linuxbrew
     su -c 'brew install mafft' linuxbrew
