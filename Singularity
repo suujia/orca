@@ -143,7 +143,6 @@ From: linuxbrew/linuxbrew
     rapidnj \
     raxml \
     ray \
-    rcorrector \
     readline \
     readseq \
     readsim \
