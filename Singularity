@@ -221,7 +221,6 @@ From: linuxbrew/linuxbrew
     htsbox \
     htslib \
     humann2 \
-    idba \
     igv \
     igvtools \
     impute2 \
@@ -235,7 +234,6 @@ From: linuxbrew/linuxbrew
     kaiju \
     kallisto \
     kat \
-    kent-tools \
     kma \
     kmacs \
     kmc \
@@ -254,9 +252,37 @@ From: linuxbrew/linuxbrew
     lighter \
     links-scaffolder \
     lofreq \
-    lrsim \
     lsd \
     lumpy-sv' linuxbrew
+
+    su -c 'brew install \
+    tagdust \
+    tasr \
+    tbb \
+    tophat \
+    trans-abyss \
+    transdecoder \
+    transrate-tools \
+    trf \
+    trimadap \
+    trimmomatic \
+    trnascan \
+    uniqtag \
+    uproc \
+    vague \
+    varscan \
+    varsim \
+    vcake \
+    vcflib \
+    vcftools \
+    velvet \
+    velvetoptimiser \
+    viennarna \
+    vsearch \
+    vt \
+    weblogo \
+    wiggletools \
+    yaha' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
