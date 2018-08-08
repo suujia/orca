@@ -26,6 +26,19 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
         && apt-get install -y --no-install-recommends \
                 fonts-dejavu-core \
                 python-setuptools \
+                bzip2 \
+                ca-certificates \
+                curl \
+                file \
+                fonts-dejavu-core \
+                g++ \
+                git \
+                locales \
+                make \
+                openssh-client \
+                patch \
+                sudo \
+                uuid-runtime \
         && rm -rf /var/lib/apt/lists/*
     apt-get clean
 
@@ -38,7 +51,6 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     cd /Software
     chmod 777 /scratch
     chmod +t /scratch
-    apt-get install -y apt-transport-https build-essential libsm6 libxrender1 libfontconfig1 ruby
     useradd -m singularity
     su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git /Software/brew' singularity
     su -c 'brew install gawk' singularity
