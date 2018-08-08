@@ -60,14 +60,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     automake \
     berkeley-db \
     expat \
-    jdk \
     less \
     libxml2 \
     miller \
     numpy \
     python \
     python@2 \
-    r \
     tcsh \
     unzip \
     zip \
@@ -101,7 +99,6 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     virtualenv
 
     su -c 'brew install matplotlib' singularity
-    su -c 'brew install mysql' singularity
     su -c 'brew install scipy' singularity
     su -c 'brew install vim' singularity
     su -c 'brew install cpanm' singularity
