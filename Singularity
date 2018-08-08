@@ -210,7 +210,9 @@ From: linuxbrew/linuxbrew
     glimmerhmm \
     gmap-gsnap \
     grabix \
-    graphviz \
+    graphviz' linuxbrew
+
+    su -c 'brew install \
     gsl \
     gzstream \
     harfbuzz \
@@ -282,26 +284,6 @@ From: linuxbrew/linuxbrew
     mir-prefer \
     mlst \
     mosdepth \
-    mothur \
-    mp-est \
-    mrbayes \
-    multi-worm-tracker \
-    mummer \
-    muscle \
-    nano \
-    nanopolish \
-    ncl \
-    newick-utils \
-    newicktools \
-    nextflow \ 
-    novoalign \
-    ntcard \
-    nxtrim \
-    oases \
-    oma \
-    orfm \
-    orthofinder \
-    paml \
     pandaseq \
     panito \
     parallel \
@@ -316,7 +298,9 @@ From: linuxbrew/linuxbrew
     phyutility \
     phyx \
     picard-tools \
-    piler \
+    piler' linuxbrew
+
+    su -c 'brew install \
     pilercr \
     pilon \
     pixman \
@@ -353,7 +337,9 @@ From: linuxbrew/linuxbrew
     rna-star \
     rnammer \
     ropebwt2 \
-    rtg-tools \
+    rtg-tools' linuxbrew
+
+    su -c 'brew install \
     salmon \
     sambamba \
     samblaster \
@@ -391,7 +377,9 @@ From: linuxbrew/linuxbrew
     squeezambler \
     sratoolkit \
     ssake \
-    stringtie \
+    stringtie' linuxbrew
+
+    su -c 'brew install \
     swarm \
     szip \
     tagdust \
