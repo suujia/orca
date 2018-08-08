@@ -267,7 +267,6 @@ From: linuxbrew/linuxbrew
     pear \
     phipack \
     phlawd \
-    phylip \
     phyml \
     phyutility \
     phyx \
@@ -288,7 +287,6 @@ From: linuxbrew/linuxbrew
     quest \
     quickmerge \
     quicktree \
-    quorum \
     r8s \
     racon \
     rampart \
