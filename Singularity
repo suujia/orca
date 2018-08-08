@@ -207,7 +207,56 @@ From: linuxbrew/linuxbrew
     glimmerhmm \
     gmap-gsnap \
     grabix \
-    graphviz' linuxbrew
+    graphviz \
+    gsl \
+    gzstream' linuxbrew
+
+    su -c 'brew install \
+    harfbuzz \
+    hisat \
+    hisat2 \
+    hlaminer \
+    hmmer \
+    hmmer2 \
+    htsbox \
+    htslib \
+    humann2 \
+    idba \
+    igv \
+    igvtools \
+    impute2 \
+    infernal \
+    iqtree \
+    ispcr \
+    jellyfish \
+    jpeg \
+    jspecies \
+    k8 \
+    kaiju \
+    kallisto \
+    kat \
+    kent-tools \
+    kma \
+    kmacs \
+    kmc \
+    kmergenie \
+    kmerstream \
+    kollector \
+    kr \
+    kraken \
+    last \
+    lastz \
+    libbigwig \
+    libpll \
+    libsequence \
+    libtool \
+    light-assembler \
+    lighter \
+    links-scaffolder \
+    lofreq \
+    lrsim \
+    lsd \
+    lumpy-sv' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
