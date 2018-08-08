@@ -1,25 +1,18 @@
-BootStrap: debootstrap
-OSVersion: trusty
-MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+Bootstrap: docker
+From: linuxbrew/linuxbrew
 
 %labels
     MAINTAINER="sjackman@gmail.com"
 
-%apprun R
-  exec R "$@"
-
-%apprun Rscript
-  exec Rscript "$@"
-
-%runscript
-  exec R "$@"
-
 %post
-    mkdir -p /Software 
-    cd /Software
-    chmod 777 /Software
+    chown -R root:root /usr/bin/sudo
+    chown -R linuxbrew: /usr/local
+    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
+    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
-    # need to create mount point for home dir
+    chmod -R 777 /home/linuxbrew/.linuxbrew
+
+    # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
 
     apt-get update \
@@ -29,123 +22,36 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
         && rm -rf /var/lib/apt/lists/*
     apt-get clean
 
-    # set up linuxbrew 
-    locale-gen "en_US.UTF-8"
-    dpkg-reconfigure locales
-    export LANGUAGE="en_US.UTF-8"
-    echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
-    echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
-    cd /Software
-    chmod 777 /scratch
-    chmod +t /scratch
-    apt-get install -y apt-transport-https build-essential libsm6 libxrender1 libfontconfig1 ruby
-    useradd -m singularity
-    su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git /Software/brew' singularity
-    su -c 'brew install gawk' singularity
-
     # for brew install to work
-    PATH=/Software/brew/bin:/Software/brew/sbin:$PATH
-    export PATH
+    PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+    echo 'PATH='$PATH >> /etc/environment
 
-    # brew can't be run as root, use as linuxbrew user
-    su -c 'brew update' singularity
-    su -c 'brew tap brewsci/base' singularity
-    su -c 'brew tap brewsci/science' singularity
-    su -c 'brew tap brewsci/bio' singularity
+    echo "
+      export PATH=/usr/local/bin:$PATH
+      export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+    " >> /etc/environment
 
-    su -c 'brew install bcalm' singularity
+    # brew can't be run as root, use as li nuxbrew user
+    su -c 'brew update' linuxbrew
+    su -c 'brew tap brewsci/base' linuxbrew
+    su -c 'brew tap brewsci/science' linuxbrew
+    su -c 'brew tap brewsci/bio' linuxbrew
 
     su -c 'brew install \
     autoconf \
     automake \
     berkeley-db \
     expat \
+    jdk \
     less \
     libxml2 \
+    matplotlib \
     miller \
     numpy \
     python \
     python@2 \
+    scipy \
     tcsh \
     unzip \
     zip \
-    zlib' singularity
-
-    # python3 installed with numpy, python2 installed with jdk
-
-    # for gem install to work 
-    export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
-    export PATH=/usr/local/opt/ruby20/bin:$PATH
-    su -c 'brew install ruby' singularity
-    su -c 'gem install \
-    gnuplot \
-    narray \
-    RubyInline \
-    terminal-table \
-    && gem cleanup all' singularity
-
-    pip2 install \
-    --upgrade setuptools \
-    -U pip \
-    biopython
-
-    pip3 install \
-    --upgrade setuptools \
-    -U pip \
-    --no-cache-dir biopython \
-    cwlref-runner \
-    pandas \
-    pyvcf \
-    virtualenv
-
-    su -c 'brew install matplotlib' singularity
-    su -c 'brew install scipy' singularity
-    su -c 'brew install vim' singularity
-    su -c 'brew install cpanm' singularity
-    su -c 'brew install pandoc' singularity
-
-    su -c 'brew install \
-    a5 \
-    abacas \
-    abyss \
-    abyss-explorer \
-    ace-corrector \
-    adapterremoval \
-    afra \
-    andi \
-    anvio \
-    aragorn \
-    arcs \
-    art \
-    artemis \
-    ascp \
-    astral \
-    augustus' singularity
-
-    su -c 'brew install \
-    bali-phy \
-    bamutil \
-    barrnap \
-    bamhash \
-    bamm \
-    bamtools \
-    busco \
-    bwa' singularity
-    
-    su -c 'brew install \
-    cannoli \
-    canu \
-    cap3 \
-    cd-hit \
-    cegma \
-    celera-assembler \
-    centrifuge \
-    cerulean' singularity
-
-    su -c 'brew install perl' singularity
-    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
-
-%file 
-    # runs automatically when the simg is run 
-    # python /hello_world.py
+    zlib' linuxbrew
