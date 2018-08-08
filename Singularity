@@ -19,18 +19,20 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	export LANGUAGE="en_US.UTF-8"
 	echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
 	echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
+    echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
 	mkdir /Software
 	chmod 777 /tmp
 	chmod +t /tmp
 	chmod 777 /Software
+
 	apt-get update
 	apt-get install -y apt-transport-https build-essential cmake libsm6 libxrender1 libfontconfig1 wget vim git unzip python-setuptools ruby
 	apt-get clean
-	useradd -m singularity
-	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' singularity
-	su -c '/Software/brew/bin/brew install bsdmainutils parallel util-linux' singularity
-	su -c '/Software/brew/bin/brew tap homebrew/science' singularity
-	su -c '/Software/brew/bin/brew install art bwa samtools' singularity
-	sed -i 's|PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin|PATH="/Software/brew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
-    su -c 'brew doctor' singularity
+	useradd -m linuxbrew
+	su -c 'cd .linuxbrew && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
+	su -c '/Software/brew/bin/brew tap homebrew/science' linuxbrew
+	su -c '/Software/brew/bin/brew install samtools' linuxbrew
+                                                                                                                     
+	sed -i 's|PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin|PATH="/home/linuxbrew/.linuxbrew/Homebrew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
+    su -c 'brew doctor' linuxbrew
