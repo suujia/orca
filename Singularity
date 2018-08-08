@@ -86,11 +86,11 @@ From: linuxbrew/linuxbrew
     virtualenv
 
     su -c 'brew install matplotlib' linuxbrew
-  #  su -c 'brew install mysql' linuxbrew
+  # su -c 'brew install mysql' linuxbrew
     su -c 'brew install scipy' linuxbrew
     su -c 'brew install vim' linuxbrew
     su -c 'brew install cpanm' linuxbrew
-    su -c 'brew install pandoc' linuxbrew
+  # su -c 'brew install pandoc' linuxbrew
 
     # for gem install to work 
     su -c 'brew install ruby' linuxbrew
@@ -102,109 +102,6 @@ From: linuxbrew/linuxbrew
     RubyInline \
     terminal-table \
     && gem cleanup all' linuxbrew
-
-    su -c 'brew install \
-    paml \
-    pandaseq \
-    panito \
-    parallel \
-    parsnp \
-    pathd8 \
-    pathvisio \
-    pcre \
-    pear \
-    phipack \
-    phlawd \
-    phylip \
-    phyml \
-    phyutility \
-    phyx \
-    picard-tools \
-    piler \
-    pilercr \
-    pilon \
-    pixman \
-    pkg-config \
-    plink \
-    poa \
-    prank \
-    prodigal \
-    prokka \
-    proteinortho \
-    psmc \
-    quast \
-    quest \
-    quickmerge \
-    quicktree \
-    quorum \
-    r8s \
-    racon \
-    rampart \
-    rapidnj \
-    raxml \
-    ray \
-    readline \
-    readseq \
-    readsim \
-    realphy \
-    recon \
-    repeatmodeler \
-    repeatscout \
-    rmblast \
-    rna-star \
-    rnammer \
-    rtg-tools \
-    salmon \
-    sambamba \
-    samblaster \
-    samclip \
-    samtools \
-    samtools@0.1 \
-    scarpa \
-    sdsl-lite \
-    seq-gen \
-    seqan \
-    seqkit \
-    seqtk \
-    sequel \
-    sga \
-    shovill \
-    shrimp \
-    sickle \
-    simulate-pcr \
-    skesa \
-    skewer \
-    smalt \
-    snap \
-    snoscan \
-    snp-dists \
-    snp-sites \
-    snpeff \
-    soapdenovo \
-    solexaqa \
-    sortmerna \
-    spaced \
-    spades \
-    spici \
-    sqlite \
-    squeakr \
-    squeezambler \
-    sratoolkit \
-    ssake \
-    stringtie \
-    swarm \
-    szip' linuxbrew
-    
-    su -c 'brew install \
-    vcftools \
-    velvet \
-    velvetoptimiser \
-    viennarna \
-    vsearch \
-    vt \
-    weblogo \
-    wiggletools \
-    yaha' linuxbrew
 
     su -c 'brew install \
     a5 \
@@ -359,6 +256,98 @@ From: linuxbrew/linuxbrew
     lumpy-sv' linuxbrew
 
     su -c 'brew install \
+    paml \
+    pandaseq \
+    panito \
+    parallel \
+    parsnp \
+    pathd8 \
+    pathvisio \
+    pcre \
+    pear \
+    phipack \
+    phlawd \
+    phylip \
+    phyml \
+    phyutility \
+    phyx \
+    picard-tools \
+    piler \
+    pilercr \
+    pilon \
+    pixman \
+    pkg-config \
+    plink \
+    poa \
+    prank \
+    prodigal \
+    prokka \
+    proteinortho \
+    psmc \
+    quast \
+    quest \
+    quickmerge \
+    quicktree \
+    quorum \
+    r8s \
+    racon \
+    rampart \
+    rapidnj \
+    raxml \
+    ray \
+    readline \
+    readseq \
+    readsim \
+    realphy \
+    recon \
+    repeatmodeler \
+    repeatscout \
+    rmblast \
+    rna-star \
+    rnammer \
+    rtg-tools \
+    salmon \
+    sambamba \
+    samblaster \
+    samclip \
+    samtools \
+    samtools@0.1 \
+    scarpa \
+    sdsl-lite \
+    seq-gen \
+    seqan \
+    seqkit \
+    seqtk \
+    sequel \
+    sga \
+    shovill \
+    shrimp \
+    sickle \
+    simulate-pcr \
+    skesa \
+    skewer \
+    smalt \
+    snap \
+    snoscan \
+    snp-dists \
+    snp-sites \
+    snpeff \
+    soapdenovo \
+    solexaqa \
+    sortmerna \
+    spaced \
+    spades \
+    spici \
+    sqlite \
+    squeakr \
+    squeezambler \
+    sratoolkit \
+    ssake \
+    stringtie \
+    swarm \
+    szip' linuxbrew
+
+    su -c 'brew install \
     tagdust \
     tasr \
     tbb \
@@ -376,6 +365,17 @@ From: linuxbrew/linuxbrew
     varscan \
     varsim \
     vcake' linuxbrew
+
+    su -c 'brew install \
+    vcftools \
+    velvet \
+    velvetoptimiser \
+    viennarna \
+    vsearch \
+    vt \
+    weblogo \
+    wiggletools \
+    yaha' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
