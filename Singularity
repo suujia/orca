@@ -281,7 +281,6 @@ From: linuxbrew/linuxbrew
     prank \
     prodigal \
     prokka \
-    proteinortho \
     psmc \
     quast \
     quest \
