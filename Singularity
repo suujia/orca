@@ -141,6 +141,74 @@ From: linuxbrew/linuxbrew
     centrifuge \
     cerulean' linuxbrew
 
+    su -c 'brew install \
+    circlator \
+    circos \
+    clark \
+    clonalframeml \
+    clonehd \
+    clustal-omega \
+    clustal-w \
+    cmake \
+    consel \
+    curl \
+    cutadapt \
+    daligner \
+    dazz_db \
+    delly \
+    dextractor \
+    diamond \
+    dida \
+    discovar \
+    disty \
+    dsh-bio \
+    dsk \
+    dwgsim \
+    e-mem \
+    easel \
+    edirect \
+    elph \
+    ema \
+    emacs \
+    emboss \
+    exonerate  \
+    fasta \
+    fastani \
+    fastml \
+    fastp \
+    fastq-tools \
+    fastqc \
+    fasttree \
+    fastuniq \
+    fastx_toolkit \
+    fermi \
+    fermi-lite \
+    fermi2 \
+    fermikit \
+    finch-rs \
+    flash \
+    flex \
+    flye \
+    fqzcomp \
+    freebayes \
+    freec \
+    fsa \
+    fwdpp \
+    gatb \
+    gatk \
+    geneid \
+    genewise \
+    genome-painter \
+    genometools \
+    gepard \
+    gfalint \
+    gfakluge \
+    gingr \
+    glimmerhmm \
+    gmap-gsnap \
+    grabix \
+    graphviz' linuxbrew
+
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
     echo 'PERL5LIB='$PERL5LIB >> /etc/environment
