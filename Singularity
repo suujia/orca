@@ -20,7 +20,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     chmod 777 /Software
 
     # need to create mount point for home dir
-    mkdir /uufs
+    mkdir /uufs /scratch
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
