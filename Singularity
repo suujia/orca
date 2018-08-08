@@ -2,162 +2,27 @@ BootStrap: debootstrap
 OSVersion: trusty
 MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
-%labels
-    MAINTAINER="sjackman@gmail.com"
-
-%apprun R
-  exec R "$@"
-
-%apprun Rscript
-  exec Rscript "$@"
-
 %runscript
-  exec R "$@"
+	# print out software versions installed by linuxbrew
+	find /Software/brew/Cellar -maxdepth 2 -print | sed 's|/Software/brew/Cellar||g' | sed 's|^/||' | grep "/" | sed 's|/|\t|' | sort | awk '{print $1, $2, "Homebrew"}' | column -t | sort -u --ignore-case
 
 %post
-    mkdir -p /Software 
-    cd /Software
-    chmod 777 /Software
-
-    # need to create mount point for home dir
-    mkdir /uufs /scratch
-
-    apt-get update \
-        && apt-get install -y --no-install-recommends \
-                fonts-dejavu-core \
-                python-setuptools \
-                bzip2 \
-                ca-certificates \
-                curl \
-                file \
-                fonts-dejavu-core \
-                g++ \
-                git \
-                locales \
-                make \
-                openssh-client \
-                patch \
-                sudo \
-                uuid-runtime \
-        && rm -rf /var/lib/apt/lists/*
-    apt-get clean
-
-    # set up linuxbrew 
-    locale-gen "en_US.UTF-8"
-    dpkg-reconfigure locales
-    export LANGUAGE="en_US.UTF-8"
-    echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
-    echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
-    cd /Software
-    chmod 777 /scratch
-    chmod +t /scratch
-    useradd -m singularity
-    su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git /Software/brew' singularity
-    su -c 'brew install gawk' singularity
-
-    # for brew install to work
-    PATH=/Software/brew/bin:/Software/brew/sbin:$PATH
-    export PATH
-
-    # brew can't be run as root, use as linuxbrew user
-    su -c 'brew update' singularity
-    su -c 'brew tap brewsci/base' singularity
-    su -c 'brew tap brewsci/science' singularity
-    su -c 'brew tap brewsci/bio' singularity
-
-    su -c 'brew install bcalm' singularity
-
-    su -c 'brew install \
-    autoconf \
-    automake \
-    berkeley-db \
-    expat \
-    less \
-    libxml2 \
-    miller \
-    numpy \
-    python \
-    python@2 \
-    tcsh \
-    unzip \
-    zip \
-    zlib' singularity
-
-    # python3 installed with numpy, python2 installed with jdk
-
-    # for gem install to work 
-    export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
-    export PATH=/usr/local/opt/ruby20/bin:$PATH
-    su -c 'brew install ruby' singularity
-    su -c 'gem install \
-    gnuplot \
-    narray \
-    RubyInline \
-    terminal-table \
-    && gem cleanup all' singularity
-
-    pip2 install \
-    --upgrade setuptools \
-    -U pip \
-    biopython
-
-    pip3 install \
-    --upgrade setuptools \
-    -U pip \
-    --no-cache-dir biopython \
-    cwlref-runner \
-    pandas \
-    pyvcf \
-    virtualenv
-
-    su -c 'brew install matplotlib' singularity
-    su -c 'brew install scipy' singularity
-    su -c 'brew install vim' singularity
-    su -c 'brew install cpanm' singularity
-    su -c 'brew install pandoc' singularity
-
-    su -c 'brew install \
-    a5 \
-    abacas \
-    abyss \
-    abyss-explorer \
-    ace-corrector \
-    adapterremoval \
-    afra \
-    andi \
-    anvio \
-    aragorn \
-    arcs \
-    art \
-    artemis \
-    ascp \
-    astral \
-    augustus' singularity
-
-    su -c 'brew install \
-    bali-phy \
-    bamutil \
-    barrnap \
-    bamhash \
-    bamm \
-    bamtools \
-    busco \
-    bwa' singularity
-    
-    su -c 'brew install \
-    cannoli \
-    canu \
-    cap3 \
-    cd-hit \
-    cegma \
-    celera-assembler \
-    centrifuge \
-    cerulean' singularity
-
-    su -c 'brew install perl' singularity
-    PERL5LIB=/home/linuxbrew/perl5/lib/perl5
-    echo 'PERL5LIB='$PERL5LIB >> /etc/environment
-
-%file 
-    # runs automatically when the simg is run 
-    # python /hello_world.py
+	sed -i 's/$/ universe/' /etc/apt/sources.list
+	locale-gen "en_US.UTF-8"
+	dpkg-reconfigure locales
+	export LANGUAGE="en_US.UTF-8"
+	echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
+	echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
+	mkdir /Software
+	chmod 777 /tmp
+	chmod +t /tmp
+	chmod 777 /Software
+	apt-get update
+	apt-get install -y apt-transport-https build-essential cmake curl libsm6 libxrender1 libfontconfig1 wget vim git unzip python-setuptools ruby
+	apt-get clean
+	useradd -m singularity
+	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' singularity
+	su -c '/Software/brew/bin/brew install bsdmainutils parallel util-linux' singularity
+	su -c '/Software/brew/bin/brew tap homebrew/science' singularity
+	su -c '/Software/brew/bin/brew install art bwa samtools' singularity
+	sed -i 's|PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin|PATH="/Software/brew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
