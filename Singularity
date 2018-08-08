@@ -93,15 +93,119 @@ From: linuxbrew/linuxbrew
     su -c 'brew install pandoc' linuxbrew
 
     # for gem install to work 
+    su -c 'brew install ruby' linuxbrew
     export PATH=/usr/local/lib/ruby/gems/2.0.0/bin:$PATH
     export PATH=/usr/local/opt/ruby20/bin:$PATH
-    su -c 'brew install ruby' linuxbrew
     su -c 'gem install \
     gnuplot \
     narray \
     RubyInline \
     terminal-table \
     && gem cleanup all' linuxbrew
+
+    su -c 'brew install \
+    paml \
+    pandaseq \
+    panito \
+    parallel \
+    parsnp \
+    pathd8 \
+    pathvisio \
+    pcre \
+    pear \
+    phipack \
+    phlawd \
+    phylip \
+    phyml \
+    phyutility \
+    phyx \
+    picard-tools \
+    piler \
+    pilercr \
+    pilon \
+    pixman \
+    pkg-config \
+    plink \
+    poa \
+    prank \
+    prodigal \
+    prokka \
+    proteinortho \
+    psmc \
+    quast \
+    quest \
+    quickmerge \
+    quicktree \
+    quorum \
+    r8s \
+    racon \
+    rampart \
+    rapidnj \
+    raxml \
+    ray \
+    rcorrector \
+    readline \
+    readseq \
+    readsim \
+    realphy \
+    recon \
+    repeatmodeler \
+    repeatscout \
+    rmblast \
+    rna-star \
+    rnammer \
+    rtg-tools \
+    salmon \
+    sambamba \
+    samblaster \
+    samclip \
+    samtools \
+    samtools@0.1 \
+    scarpa \
+    sdsl-lite \
+    seq-gen \
+    seqan \
+    seqkit \
+    seqtk \
+    sequel \
+    sga \
+    shovill \
+    shrimp \
+    sickle \
+    simulate-pcr \
+    skesa \
+    skewer \
+    smalt \
+    snap \
+    snoscan \
+    snp-dists \
+    snp-sites \
+    snpeff \
+    soapdenovo \
+    solexaqa \
+    sortmerna \
+    spaced \
+    spades \
+    spici \
+    sqlite \
+    squeakr \
+    squeezambler \
+    sratoolkit \
+    ssake \
+    stringtie \
+    swarm \
+    szip' linuxbrew
+    
+    su -c 'brew install \
+    vcftools \
+    velvet \
+    velvetoptimiser \
+    viennarna \
+    vsearch \
+    vt \
+    weblogo \
+    wiggletools \
+    yaha' linuxbrew
 
     su -c 'brew install \
     a5 \
@@ -272,17 +376,7 @@ From: linuxbrew/linuxbrew
     vague \
     varscan \
     varsim \
-    vcake \
-    vcflib \
-    vcftools \
-    velvet \
-    velvetoptimiser \
-    viennarna \
-    vsearch \
-    vt \
-    weblogo \
-    wiggletools \
-    yaha' linuxbrew
+    vcake' linuxbrew
 
     su -c 'brew install perl' linuxbrew
     PERL5LIB=/home/linuxbrew/perl5/lib/perl5
