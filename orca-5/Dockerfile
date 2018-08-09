@@ -28,7 +28,7 @@ mlst \
 mosdepth \
 mothur \
 mp-est \
-mpboost \
+mpboot \
 mrbayes \
 multi-worm-tracker \
 mummer \
@@ -58,7 +58,6 @@ pcre \
 pear \
 phipack \
 phlawd \
-phylip \
 phyml \
 phyutility \
 phyx \

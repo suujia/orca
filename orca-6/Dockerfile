@@ -80,9 +80,7 @@ transrate-tools \
 treepl \
 trf \
 trimadap \
-trimal \
 trimmomatic \
-trinity \
 trnascan \
 unicycler \
 uniqtag \

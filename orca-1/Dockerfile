@@ -4,16 +4,18 @@ LABEL maintainer="sjackan@gmail.com" name="bcgsc/orca-1"
 # Install Python2 packages
 # trans-abyss requires python-igraph.
 RUN pip2 install \
+-U pip \
 biopython \
 python-igraph
 
 # Install Python3 packages
 RUN pip3 install \
-biopython \
+--upgrade setuptools \
+-U pip \
+--no-cache-dir biopython \
 cwlref-runner \
-htseq \
+git+https://github.com/pysam-developers/pysam \
 pandas \
-pysam \
 pyvcf \
 virtualenv
 
