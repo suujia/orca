@@ -334,7 +334,6 @@ From: linuxbrew/linuxbrew
     spaced \
     spades \
     spici \
-    sqlite \
     squeakr \
     squeezambler \
     sratoolkit \
