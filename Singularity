@@ -2,13 +2,28 @@ BootStrap: docker
 From: vanessa/singularity-scientific-example
 
 %post
+	sed -i 's/$/ universe/' /etc/apt/sources.list
+	locale-gen "en_US.UTF-8"
+	dpkg-reconfigure locales
+	export LANGUAGE="en_US.UTF-8"
+	echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
+	echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
+    echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
+
+	chmod 777 /tmp
+	chmod +t /tmp
+	chmod 777 /home/linuxbrew/
+	useradd -m linuxbrew
+    
     apt-get update \
         && apt-get install -y --no-install-recommends \
                 fonts-dejavu-core \
                 python-setuptools \
         && rm -rf /var/lib/apt/lists/*
 
-    # for brew install to work
+    su -c '/Software/brew/bin/brew tap homebrew/science' linuxbrew
+	su -c '/Software/brew/bin/brew install samtools' linuxbrew
+
     PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
     echo 'PATH='$PATH >> /etc/environment
 
@@ -22,12 +37,8 @@ From: vanessa/singularity-scientific-example
         autoconf \
         automake \
         berkeley-db \
-        cpanm \
-        expat \
-        jdk \
         less \
         libxml2 \
         matplotlib \
         miller \
-        mysql \
         numpy' linuxbrew
