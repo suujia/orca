@@ -44,13 +44,15 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
     PATH=/Software/bin:/Software/sbin:$PATH
     echo 'PATH='$PATH >> /environment
+    PATH='which brew':$PATH
+    echo 'PATH='$PATH >> /environment
 
-    su -c 'brew update' linuxbrew
-    su -c 'brew tap brewsci/base' linuxbrew
-    su -c 'brew tap brewsci/science' linuxbrew
-    su -c 'brew tap brewsci/bio' linuxbrew
+    su -c '/Software/bin/brew update' linuxbrew
+    su -c '/Software/bin/brew tap brewsci/base' linuxbrew
+    su -c '/Software/bin/brew tap brewsci/science' linuxbrew
+    su -c '/Software/bin/brew tap brewsci/bio' linuxbrew
 
-    su -c 'brew install \
+    su -c '/Software/bin/brew install \
     a5 \
     abacas \
     abyss \
