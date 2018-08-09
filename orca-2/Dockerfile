@@ -4,7 +4,6 @@ LABEL maintainer="sjackan@gmail.com" name="bcgsc/orca-2"
 RUN brew install \
 a5 \
 abacas \
-abricate \
 abyss \
 abyss-explorer \
 ace-corrector \
@@ -20,7 +19,6 @@ art \
 artemis \
 ascp \
 astral \
-atram \
 augustus \
 bali-phy \
 bam-readcount \
@@ -29,7 +27,6 @@ bamhash \
 bamm \
 bamtools \
 bamutil \
-bandage \
 barrnap \
 bbtools \
 bcalm \
