@@ -332,7 +332,6 @@ From: linuxbrew/linuxbrew
     solexaqa \
     sortmerna \
     spaced \
-    spades \
     spici \
     squeakr \
     squeezambler \
