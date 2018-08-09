@@ -27,6 +27,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
                 python-setuptools \
         && rm -rf /var/lib/apt/lists/*
 
+	apt-get install -y apt-transport-https build-essential cmake curl libsm6 libxrender1 libfontconfig1 wget vim git unzip python-setuptools ruby
 	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
 
     PATH=/Software/bin:/Software/sbin:$PATH
