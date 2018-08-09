@@ -38,12 +38,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
                 python-setuptools \
                 ruby \
         && rm -rf /var/lib/apt/lists/*
-        
+
 	useradd -m linuxbrew
 	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
 
     PATH=/Software/bin:/Software/sbin:$PATH
-    echo 'PATH='$PATH >> /etc/environment
+    echo 'PATH='$PATH >> /environment
 
     su -c 'brew update' linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
