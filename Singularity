@@ -269,7 +269,6 @@ From: linuxbrew/linuxbrew
     phlawd \
     phyml \
     phyutility \
-    phyx \
     picard-tools \
     piler \
     pilercr \
@@ -341,8 +340,7 @@ From: linuxbrew/linuxbrew
     sratoolkit \
     ssake \
     stringtie \
-    swarm \
-    szip' linuxbrew
+    swarm' linuxbrew
 
     su -c 'brew install \
     tagdust \
