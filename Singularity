@@ -38,11 +38,19 @@ From: vanessa/singularity-scientific-example
     su -c 'brew tap brewsci/bio' linuxbrew
 
     su -c 'brew install \
-        autoconf \
-        automake \
-        berkeley-db \
-        less \
-        libxml2 \
-        matplotlib \
-        miller \
-        numpy' linuxbrew
+    a5 \
+    abacas \
+    abyss \
+    abyss-explorer \
+    ace-corrector \
+    adapterremoval \
+    afra \
+    andi \
+    anvio \
+    aragorn \
+    arcs \
+    art \
+    artemis \
+    ascp \
+    astral \
+    augustus' linuxbrew
