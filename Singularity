@@ -1,5 +1,6 @@
-BootStrap: docker
-From: vanessa/singularity-scientific-example
+BootStrap: debootstrap
+OSVersion: xenial
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %runscript
 	# print out software versions installed by linuxbrew
@@ -31,7 +32,6 @@ From: vanessa/singularity-scientific-example
     PATH=/Software/bin:/Software/sbin:$PATH
     echo 'PATH='$PATH >> /etc/environment
 
-    # brew can't be run as root, use as linuxbrew user
     su -c 'brew update' linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
