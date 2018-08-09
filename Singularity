@@ -4,7 +4,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %runscript
 	# print out software versions installed by linuxbrew
-	find /Software/Cellar -maxdepth 2 -print | sed 's|/Software/brew/Cellar||g' | sed 's|^/||' | grep "/" | sed 's|/|\t|' | sort | awk '{print $1, $2, "Homebrew"}' | column -t | sort -u --ignore-case
+	find /Software/brew/Cellar -maxdepth 2 -print | sed 's|/Software/brew/Cellar||g' | sed 's|^/||' | grep "/" | sed 's|/|\t|' | sort | awk '{print $1, $2, "Homebrew"}' | column -t | sort -u --ignore-case
 
 %post
 	sed -i 's/$/ universe/' /etc/apt/sources.list
@@ -42,15 +42,10 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	useradd -m linuxbrew
 	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
 
-    PATH=/Software/bin:/Software/sbin:$PATH
-    echo 'PATH='$PATH >> /environment
-    PATH='which brew':$PATH
-    echo 'PATH='$PATH >> /environment
-
-    su -c '/Software/bin/brew update' linuxbrew
-    su -c '/Software/bin/brew tap brewsci/base' linuxbrew
-    su -c '/Software/bin/brew tap brewsci/science' linuxbrew
-    su -c '/Software/bin/brew tap brewsci/bio' linuxbrew
+    su -c '/Software/brew/bin/brew update' linuxbrew
+    su -c '/Software/brew/bin/brew tap brewsci/base' linuxbrew
+    su -c '/Software/brew/bin/brew tap brewsci/science' linuxbrew
+    su -c '/Software/brew/bin/brew tap brewsci/bio' linuxbrew
 
     su -c '/Software/bin/brew install \
     a5 \
@@ -69,3 +64,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     ascp \
     astral \
     augustus' linuxbrew
+    
+    sed -i 's|PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin|PATH="/Software/brew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
