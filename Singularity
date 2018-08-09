@@ -47,7 +47,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     su -c '/Software/brew/bin/brew tap brewsci/science' linuxbrew
     su -c '/Software/brew/bin/brew tap brewsci/bio' linuxbrew
 
-    su -c '/Software/bin/brew install \
+    su -c '/Software/brew/bin/brew install \
     a5 \
     abacas \
     abyss \
@@ -64,5 +64,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     ascp \
     astral \
     augustus' linuxbrew
-    
+
     sed -i 's|PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin|PATH="/Software/brew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
