@@ -19,15 +19,27 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	chmod 777 /tmp
 	chmod +t /tmp
 	chmod 777 /Software
-	useradd -m linuxbrew
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
                 fonts-dejavu-core \
                 python-setuptools \
+                apt-transport-https \
+                build-essential \
+                cmake \
+                curl \
+                libsm6 \
+                libxrender1 \
+                libfontconfig1 \
+                wget \
+                vim \
+                git \
+                unzip \
+                python-setuptools \
+                ruby \
         && rm -rf /var/lib/apt/lists/*
-
-	apt-get install -y apt-transport-https build-essential cmake curl libsm6 libxrender1 libfontconfig1 wget vim git unzip python-setuptools ruby
+        
+	useradd -m linuxbrew
 	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
 
     PATH=/Software/bin:/Software/sbin:$PATH
