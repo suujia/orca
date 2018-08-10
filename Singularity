@@ -313,7 +313,6 @@ From: linuxbrew/linuxbrew
     seq-gen \
     seqan \
     seqkit \
-    seqtk \
     sequel \
     sga \
     shovill \
