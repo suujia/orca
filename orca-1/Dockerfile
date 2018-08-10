@@ -9,11 +9,12 @@ python-igraph
 
 # Install Python3 packages
 RUN pip3 install \
-biopython \
+--upgrade setuptools \
+-U pip \
+--no-cache-dir biopython \
 cwlref-runner \
-htseq \
+cython \
 pandas \
-pysam \
 pyvcf \
 virtualenv
 
