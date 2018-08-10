@@ -278,7 +278,9 @@ From: linuxbrew/linuxbrew
     plink \
     poa \
     prank \
-    prodigal \
+    prodigal' linuxbrew
+
+    su -c 'brew install \
     prokka \
     psmc \
     quast \
@@ -303,41 +305,7 @@ From: linuxbrew/linuxbrew
     rnammer \
     rtg-tools \
     salmon \
-    sambamba \
-    samblaster \
-    samclip \
-    samtools \
-    samtools@0.1 \
-    scarpa \
-    sdsl-lite \
-    seq-gen \
-    seqan \
-    seqkit \
-    sequel \
-    sga \
-    shovill \
-    shrimp \
-    sickle \
-    simulate-pcr \
-    skesa \
-    skewer \
-    smalt \
-    snap \
-    snoscan \
-    snp-dists \
-    snp-sites \
-    snpeff \
-    soapdenovo \
-    solexaqa \
-    sortmerna \
-    spaced \
-    spici \
-    squeakr \
-    squeezambler \
-    sratoolkit \
-    ssake \
-    stringtie \
-    swarm' linuxbrew
+    sambamba' linuxbrew
 
     su -c 'brew install \
     tagdust \
