@@ -15,9 +15,9 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
     echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
 
-    mkdir /Software
-	chmod 777 /tmp
-	chmod +t /tmp
+    mkdir /Software /scratch
+	chmod 777 /scratch
+	chmod +t /scratch
 	chmod 777 /Software
 
     apt-get update \
