@@ -40,9 +40,13 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	&& git remote set-url origin https://github.com/Linuxbrew/brew.git
 
     cd /home/linuxbrew 
-    export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH \
-	export SHELL=/bin/bash
-    export USER=linuxbrew
+
+    PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+    echo 'PATH='$PATH >> /etc/environment
+    SHELL=/bin/bash
+    echo 'SHELL='$SHELL >> /etc/environment
+    USER=linuxbrew
+    echo 'USER='$USER >> /etc/environment
 
     export HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 
     su -c 'brew tap homebrew/core' linuxbrew
