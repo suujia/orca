@@ -22,47 +22,33 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
-                fonts-dejavu-core \
-                python-setuptools \
-                apt-transport-https \
-                build-essential \
-                cmake \
+                bzip2 \
+                ca-certificates \
                 curl \
-                libsm6 \
-                libxrender1 \
-                libfontconfig1 \
-                wget \
-                vim \
+                file \
+                fonts-dejavu-core \
+                g++ \
                 git \
-                unzip \
-                python-setuptools \
-                ruby \
+                locales \
+                make \
+                openssh-client \
+                patch \
+                sudo \
+                uuid-runtime \
         && rm -rf /var/lib/apt/lists/*
 
 	useradd -m linuxbrew
 	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
 
-    su -c '/Software/brew/bin/brew update' linuxbrew
-    su -c '/Software/brew/bin/brew tap brewsci/base' linuxbrew
-    su -c '/Software/brew/bin/brew tap brewsci/science' linuxbrew
-    su -c '/Software/brew/bin/brew tap brewsci/bio' linuxbrew
+    export HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 
+    su -c 'brew tap homebrew/core' linuxbrew
+    rm -rf ~/.cache
 
+    # test brew install brewsci tools 
+    su -c '/Software/brew/bin/brew update' linuxbrew
+    su -c '/Software/brew/bin/brew tap brewsci/bio' linuxbrew
     su -c '/Software/brew/bin/brew install \
-    a5 \
-    abacas \
-    abyss \
-    abyss-explorer \
-    ace-corrector \
-    adapterremoval \
-    afra \
-    andi \
-    anvio \
-    aragorn \
-    arcs \
-    art \
-    artemis \
-    ascp \
-    astral \
-    augustus' linuxbrew
+    matplotlib \
+    nextflow' linuxbrew
 
     sed -i 's|PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin|PATH="/Software/brew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
