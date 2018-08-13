@@ -45,7 +45,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     export USER=linuxbrew
 
     export HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 
-    su -c '/Software/brew/bin/brew tap homebrew/core' linuxbrew
+    su -c 'brew tap homebrew/core' linuxbrew
     rm -rf ~/.cache
 
     # test brew install brewsci tools 
