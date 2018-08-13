@@ -33,11 +33,11 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
                 uuid-runtime \
         && rm -rf /var/lib/apt/lists/*
 
-    mkdir /home/linuxbrew/.linuxbrew/bin \
-	&& ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/ \
-	&& chown -R linuxbrew: /home/linuxbrew/.linuxbrew \
-	&& cd /home/linuxbrew/.linuxbrew/Homebrew \
-	&& git remote set-url origin https://github.com/Linuxbrew/brew.git
+    mkdir /home/linuxbrew/.linuxbrew/bin
+	ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/
+	chown -R linuxbrew: /home/linuxbrew/.linuxbrew
+	cd /home/linuxbrew/.linuxbrew/Homebrew
+	git remote set-url origin https://github.com/Linuxbrew/brew.git
 
     cd /home/linuxbrew 
 
