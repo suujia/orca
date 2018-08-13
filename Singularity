@@ -14,11 +14,7 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 	echo 'LANGUAGE="en_US.UTF-8"' >> /etc/default/locale
 	echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
     echo 'linuxbrew ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers
-
-    mkdir /Software /scratch
-	chmod 777 /scratch
-	chmod +t /scratch
-	chmod 777 /Software
+    useradd -m -s /bin/bash linuxbrew
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -37,18 +33,24 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
                 uuid-runtime \
         && rm -rf /var/lib/apt/lists/*
 
-	useradd -m -s /bin/bash linuxbrew
-	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
+    mkdir /home/linuxbrew/.linuxbrew/bin \
+	&& ln -s ../Homebrew/bin/brew /home/linuxbrew/.linuxbrew/bin/ \
+	&& chown -R linuxbrew: /home/linuxbrew/.linuxbrew \
+	&& cd /home/linuxbrew/.linuxbrew/Homebrew \
+	&& git remote set-url origin https://github.com/Linuxbrew/brew.git
+
+    cd /home/linuxbrew 
+    export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH \
+	export SHELL=/bin/bash
+    export USER=linuxbrew
 
     export HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 
     su -c '/Software/brew/bin/brew tap homebrew/core' linuxbrew
     rm -rf ~/.cache
 
     # test brew install brewsci tools 
-    su -c '/Software/brew/bin/brew update' linuxbrew
-    su -c '/Software/brew/bin/brew tap brewsci/bio' linuxbrew
-    su -c '/Software/brew/bin/brew install \
+    su -c 'brew update' linuxbrew
+    su -c 'brew tap brewsci/bio' linuxbrew
+    su -c 'brew install \
     matplotlib \
     nextflow' linuxbrew
-
-    sed -i 's|PATH=$PATH:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin|PATH="/Software/brew/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"|' /environment
