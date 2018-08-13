@@ -37,11 +37,11 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
                 uuid-runtime \
         && rm -rf /var/lib/apt/lists/*
 
-	useradd -m linuxbrew
+	useradd -m -s /bin/bash linuxbrew
 	su -c 'cd /Software && git clone https://github.com/Linuxbrew/brew.git' linuxbrew
 
     export HOMEBREW_NO_ANALYTICS=1 HOMEBREW_NO_AUTO_UPDATE=1 
-    su -c 'brew tap homebrew/core' linuxbrew
+    su -c '/Software/brew/bin/brew tap homebrew/core' linuxbrew
     rm -rf ~/.cache
 
     # test brew install brewsci tools 
