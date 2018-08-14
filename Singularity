@@ -193,7 +193,6 @@ From: linuxbrew/linuxbrew
     flex \
     flye \
     fqzcomp \
-    freebayes \
     freec \
     fsa \
     fwdpp \
