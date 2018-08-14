@@ -17,10 +17,10 @@ From: linuxbrew/linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
-    chmod 755 /usr/local
-    chmod 755 /home/linuxbrew/
-    chmod 755 /home/linuxbrew/.linuxbrew
-    chmod 755 /home/linuxbrew/.linuxbrew/Homebrew
+    chmod 775 /usr/local
+    chmod 775 /home/linuxbrew/
+    chmod 775 /home/linuxbrew/.linuxbrew
+    chmod 775 /home/linuxbrew/.linuxbrew/Homebrew
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
@@ -53,19 +53,23 @@ From: linuxbrew/linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
     su -c 'brew tap brewsci/bio' linuxbrew
 
-    su -c 'brew install bcalm' linuxbrew
+    # man-db is in linuxbrew/extra
+    su -c 'brew tap linuxbrew/extra' linuxbrew
 
     su -c 'brew install \
     autoconf \
     automake \
     berkeley-db \
     expat \
+    jdk \
     less \
     libxml2 \
+    matplotlib \
     miller \
     numpy \
     python \
     python@2 \
+    scipy \
     tcsh \
     unzip \
     zip \
@@ -85,9 +89,7 @@ From: linuxbrew/linuxbrew
     pyvcf \
     virtualenv
 
-    su -c 'brew install matplotlib' linuxbrew
   # su -c 'brew install mysql' linuxbrew
-    su -c 'brew install scipy' linuxbrew
     su -c 'brew install vim' linuxbrew
     su -c 'brew install cpanm' linuxbrew
   # su -c 'brew install pandoc' linuxbrew
@@ -128,6 +130,7 @@ From: linuxbrew/linuxbrew
     bamhash \
     bamm \
     bamtools \
+    bcalm \
     busco \
     bwa' linuxbrew
 
@@ -256,6 +259,54 @@ From: linuxbrew/linuxbrew
     lumpy-sv' linuxbrew
 
     su -c 'brew install \
+    macse \
+    mafft \
+    magic-blast \
+    makedepend \
+    maker \
+    man-db \
+    mapsembler2 \
+    maq \
+    mash \
+    mcl \
+    megahit \
+    meme \
+    metaphlan \
+    methpipe \
+    mhap \
+    minced \
+    minia' linuxbrew
+
+    su -c 'brew install \
+    miniasm \
+    minimap \
+    minimap2 \
+    mir-prefer \
+    mitofy \
+    mlst \
+    mosdepth \
+    mothur \
+    mp-est \
+    mrbayes \
+    multi-worm-tracker' linuxbrew
+
+    su -c 'brew install \
+    mummer \
+    muscle \
+    nano \
+    nanopolish \
+    ncl \
+    newick-utils \
+    newicktools \
+    nextflow
+    ntcard \
+    nxtrim \
+    oases \
+    oma \
+    orfm \
+    orthofinder' linuxbrew
+
+    su -c 'brew install \
     paml \
     pandaseq \
     panito \
@@ -308,6 +359,23 @@ From: linuxbrew/linuxbrew
     sambamba' linuxbrew
 
     su -c 'brew install \
+    samblaster \
+    samclip \
+    samtools \
+    samtools@0.1 \
+    scarpa \
+    sdsl-lite \
+    seq-gen \
+    seqan \
+    seqkit \
+    sga \
+    shovill \
+    shrimp \
+    sickle \
+    simulate-pcr \
+    skesa' linuxbrew
+
+    su -c 'brew install \
     tagdust \
     tasr \
     tbb \
@@ -343,4 +411,4 @@ From: linuxbrew/linuxbrew
 
 %file 
     # runs automatically when the simg is run 
-    # python /hello_world.py
+    # eg. python /hello_world.py
