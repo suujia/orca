@@ -210,7 +210,6 @@ From: linuxbrew/linuxbrew
     gmap-gsnap \
     grabix \
     graphviz \
-    gsl \
     gzstream' linuxbrew
 
     su -c 'brew install \
