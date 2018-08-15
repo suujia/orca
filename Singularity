@@ -190,7 +190,6 @@ From: linuxbrew/linuxbrew
     geneid \
     genewise \
     genome-painter \
-    genometools \
     gepard \
     gfalint \
     gfakluge \
