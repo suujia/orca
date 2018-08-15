@@ -18,15 +18,10 @@ From: linuxbrew/linuxbrew
     chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
 
     chmod 775 /usr/local
-    chmod 775 /home/linuxbrew/
-    chmod 775 /home/linuxbrew/.linuxbrew
-    chmod 775 /home/linuxbrew/.linuxbrew/Homebrew
+    chmod -R 777 /home/linuxbrew/.linuxbrew
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
-
-    # install all brew packages in user home dir
-    cd /home/linuxbrew 
 
     apt-get update \
         && apt-get install -y --no-install-recommends \
@@ -44,10 +39,7 @@ From: linuxbrew/linuxbrew
       export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
     " >> /etc/environment
 
-    # install everything at the user's home directory 
-    # cd /home/linuxbrew/
-
-    # brew can't be run as root, use as linuxbrew user
+    # brew can't be run as root, use as li nuxbrew user
     su -c 'brew update' linuxbrew
     su -c 'brew tap brewsci/base' linuxbrew
     su -c 'brew tap brewsci/science' linuxbrew
@@ -124,6 +116,15 @@ From: linuxbrew/linuxbrew
     augustus' linuxbrew
 
     su -c 'brew install \
+    bali-phy \
+    bamutil \
+    barrnap \
+    bamhash \
+    bamm \
+    bamtools \
+    bwa' linuxbrew
+
+    su -c 'brew install \
     cannoli \
     canu \
     cap3 \
@@ -188,7 +189,6 @@ From: linuxbrew/linuxbrew
     gatb \
     gatk \
     geneid \
-    genewise \
     genome-painter \
     gepard \
     gfalint \
