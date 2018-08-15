@@ -21,6 +21,7 @@ From: linuxbrew/linuxbrew
     chmod 777 /home/linuxbrew/
     chmod 777 /home/linuxbrew/.linuxbrew
     chmod 777 /home/linuxbrew/.linuxbrew/Homebrew
+    chmod 777 /home/linuxbrew/.linuxbrew/Cellar
 
     # need to create mount point for home dir, scratch
     mkdir /uufs /scratch
