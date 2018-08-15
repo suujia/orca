@@ -124,17 +124,6 @@ From: linuxbrew/linuxbrew
     augustus' linuxbrew
 
     su -c 'brew install \
-    bali-phy \
-    bamutil \
-    barrnap \
-    bamhash \
-    bamm \
-    bamtools \
-    bcalm \
-    busco \
-    bwa' linuxbrew
-
-    su -c 'brew install \
     cannoli \
     canu \
     cap3 \
