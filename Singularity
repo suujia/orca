@@ -188,8 +188,6 @@ From: linuxbrew/linuxbrew
     fwdpp \
     gatb \
     gatk \
-    geneid \
-    genome-painter \
     gepard \
     gfalint \
     gfakluge \
