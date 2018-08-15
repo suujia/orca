@@ -11,7 +11,7 @@ sut:
       for i in $$(brew list | egrep -vx 'jdk|augustus|mothur|squeakr'); do
         brew linkage --test $$i || failed=1
       done
-      for i in $$(brew list | egrep -vx 'apache-spark|beast2|discovar|idba|nonpareil|pigz|raxml|ropebwt2|ruby|trinity|unzip|augustus|gaemr|graphlan|humann2|llvm|mothur|poretools|python|r|sdsl-lite|simulate-pcr|squeakr|swig'); do
+      for i in $$(brew list | egrep -vx 'apache-spark|beast2|discovar|idba|nonpareil|pigz|raxml|ropebwt2|ruby|trinity|unzip|augustus|gaemr|graphlan|humann2|llvm|mothur|poretools|python|r|sdsl-lite|simulate-pcr|squeakr|swig|idba|pigz|raxml-ng|treepl|unicycler'); do
         brew test $$i 2>&1 | tee test.log
         if grep -qx 'Error: .*: failed' test.log; then
           failed=1
