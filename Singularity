@@ -170,7 +170,9 @@ From: linuxbrew/linuxbrew
     fastml \
     fastp \
     fastq-tools \
-    fastqc \
+    fastqc' linuxbrew
+
+    su -c 'brew install \
     fasttree \
     fastuniq \
     fastx_toolkit \
