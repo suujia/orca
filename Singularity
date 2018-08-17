@@ -7,8 +7,7 @@ From: linuxbrew/linuxbrew
 %post
     chown -R root:root /usr/bin/sudo
     chown -R linuxbrew: /usr/local
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew
-    chown -R linuxbrew: /home/linuxbrew/.linuxbrew/Homebrew
+    chown -R linuxbrew: /home/linuxbrew/
 
     chmod -R 777 /home/linuxbrew/.linuxbrew
 
@@ -19,6 +18,19 @@ From: linuxbrew/linuxbrew
         && apt-get install -y --no-install-recommends \
                 fonts-dejavu-core \
                 python-setuptools \
+                bzip2 \
+                ca-certificates \
+                curl \
+                file \
+                fonts-dejavu-core \
+                g++ \
+                git \
+                locales \
+                make \
+                openssh-client \
+                patch \
+                sudo \
+                uuid-runtime \
         && rm -rf /var/lib/apt/lists/*
     apt-get clean
 
