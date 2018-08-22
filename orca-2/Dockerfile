@@ -13,7 +13,6 @@ adapterremoval \
 afra \
 amos \
 andi \
-anvio \
 aragorn \
 arcs \
 art \
